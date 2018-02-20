@@ -77,8 +77,11 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php $getDisricts = getAllDataWithActiveRecent('merchant_transactions'); $i=1; ?>
-                                        <?php while ($row = $getDisricts->fetch_assoc()) { ?>
+                                        <?php $getMerchantTransDetails = "SELECT * FROM merchant_transactions  ";
+                                            $gettransData = $conn->query($getMerchantTransDetails);
+
+                                             $i=1; ?>
+                                        <?php while ($row = $gettransData->fetch_assoc()) { ?>
                                         <tr data-expanded="true">
                                             <td><?php echo $i; ?></td>
                                             <td><?php echo $row['merchant_id']; ?></td>
