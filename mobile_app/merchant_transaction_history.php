@@ -14,13 +14,21 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		    //$getLoginData = userLogin($user_email,$nik);
 		    $getMerchantTransDetails = "SELECT * FROM merchant_transactions WHERE merchant_id='$merchant_id' ";
 		    $gettransData = $conn->query($getMerchantTransDetails);
-		    $getgettransDataDetails = $gettransData->fetch_assoc();
+		    
 		    //Set variable for session
 		    if($gettransData->num_rows > 0) {
 
-		    	$response["credit_amount"] = $getgettransDataDetails['credit_amount'];
-		    	$response["created_at"] = $getgettransDataDetails['created_at'];
-		    	$response["user_id"] = $getgettransDataDetails['user_id'];
+		    	$response["lists"] = array();
+		    	while($getgettransDataDetails = $gettransData->fetch_assoc()) {
+
+		    		$lists = array();		    			
+		    		$lists["credit_amount"] = $getgettransDataDetails['credit_amount'];
+			    	$lists["created_at"] = $getgettransDataDetails['created_at'];
+			    	$lists["user_id"] = $getgettransDataDetails['user_id'];
+
+		    		array_push($response["lists"], $lists);	
+		    	}
+		    	
 		    	$response["success"] = 0;
 				$response["message"] = "Keberhasilan!.";
 
