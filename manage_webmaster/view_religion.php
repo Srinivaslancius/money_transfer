@@ -76,7 +76,7 @@
                             </div>
                             <!-- /.widget-heading -->
                             <div class="widget-body clearfix">
-                                <table class="table table-editable table-responsive" data-toggle="datatables">
+                                <table class="table-responsive" data-toggle="datatables">
                                     <thead>
                                         <tr>
                                             <th data-identifier>ID</th>
@@ -94,7 +94,7 @@
                                         <tr data-expanded="true">
                                             <td><?php echo $i; ?></td>
                                             <td><?php echo $row['religion_name']; ?></td>
-                                            <td><?php if ($row['lkp_status_id']==0) { echo "<span class='label label-outline-success check_active open_cursor' data-incId=".$row['id']." data-status=".$row['lkp_status_id']." data-tbname='lkp_religion'>Active</span>" ;} else { echo "<span class='label label-outline-info check_active open_cursor' data-status=".$row['lkp_status_id']." data-incId=".$row['id']." data-tbname='lkp_religion'>In Active</span>" ;} ?></td>
+                                            <td><?php if ($row['lkp_status_id']==0) { echo "<button class='button1'>Active</button>";} else { echo "<button class='button2'>InActive</button>"; }  ?></td>
                                             <td><a href="edit_religions.php?bid=<?php echo $row['id']; ?>"><i class="fa fa-edit"></i></a></td>
                                             <!-- <td>November 8th 2011</td>
                                             <td>July 25th 1960</td> -->

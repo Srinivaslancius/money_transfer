@@ -66,7 +66,7 @@
                             </div>
                             <!-- /.widget-heading -->
                             <div class="widget-body clearfix">
-                                <table class="table table-editable table-responsive" data-toggle="datatables">
+                                <table class="table-responsive" data-toggle="datatables">
                                     <thead>
                                         <tr>
                                             <th>S.No</th>
@@ -92,9 +92,12 @@
                                             <td><?php echo $row['user_email']; ?></td>
                                             <td><?php echo $row['user_mobile']; ?></td>
                                             <td><?php echo $row['nik']; ?></td>
+                                            <?php if($row['amount'] !='') {?>
                                             <td><?php echo $row['amount']; ?></td>
-                                            <td><?php if($row['lkp_status_id']==0) { echo "Active";} else { echo "InActive";}  ?></td>
-                                            
+                                            <?php } else {?>
+                                            <td><?php  echo "-"; ?></td>
+                                            <?php } ?>
+                                            <td><?php if ($row['lkp_status_id']==0) { echo "<button class='button1'>Active</button>";} else { echo "<button class='button2'>InActive</button>"; }  ?></td>
                                         </tr>
                                         <?php } ?>                                        
                                     </tbody>
