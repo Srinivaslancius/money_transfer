@@ -12,9 +12,15 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		 	$user_nik_code = $_REQUEST['nik'];
 		 	$merchantId = $_REQUEST['merchantId'];
 		 	$userId = $_REQUEST['userId'];
-		 	$debitAmount = $_REQUEST['amount'];
-		 	$transaction_id = $_REQUEST['transaction_id'];
+		 	$debitAmount = $_REQUEST['amount'];		 	
 		 	$created_at = date('Y-m-d H:i:s', time() + 24 * 60 * 60);
+
+		 	$string1 = str_shuffle('abcdefghijklmnopqrstuvwxyz');
+			$random1 = substr($string1,0,3);
+			$string2 = str_shuffle('1234567890');
+			$random2 = substr($string2,0,3);
+			$contstr = "MONEY_TRANSFAR_ARBEIT";
+			$transaction_id = $contstr.$random1.$random2;
 		    
 		    $saveTransactions = "INSERT INTO `user_transactions`(`merchant_id`, `user_id`, `debit_amount`, `transaction_id`, `user_nik_code`, `created_at`) VALUES ('$merchantId','$userId','$debitAmount','$transaction_id','$user_nik_code','$created_at')";
 		    if($conn->query($saveTransactions) === TRUE) {
