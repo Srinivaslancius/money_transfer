@@ -143,10 +143,10 @@
                                         <div class="col-md-9">
                                             <div class="radiobox">
                                                 <label>
-                                                    <input type="radio" name="gender" value="1" checked="checked" required> <span class="label-text">Male &nbsp;</span>
+                                                    <input type="radio" name="gender" value="1" checked="checked" required> <span class="label-text">Pria &nbsp;</span>
                                                 </label>
                                                 <label>
-                                                    <input type="radio" name="gender" value="2" checked="checked" required> <span class="label-text">Female</span>
+                                                    <input type="radio" name="gender" value="2" checked="checked" required> <span class="label-text">Wanita</span>
                                                 </label>
                                             </div>
                                         </div>
@@ -199,8 +199,8 @@
                                         <div class="col-md-9">
                                             <select class="form-control" id="martial_status" name="martial_status" required>
                                                 <option value="">Memilih Status pernikahan</option>
-                                                <option value="1">Single</option>
-                                                <option value="2">Married</option>
+                                                <option value="1">Tunggal</option>
+                                                <option value="2">Menikah</option>
                                             </select>
                                         </div>
                                     </div>

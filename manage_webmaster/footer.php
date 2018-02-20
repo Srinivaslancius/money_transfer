@@ -1,4 +1,4 @@
-<footer class="footer"><span class="heading-font-family"> Design & Developed By Lancius IT Solutions</span>
+<footer class="footer"><span class="heading-font-family"> Desain & Dikembangkan Oleh Solusi TI Lancius</span>
 	<script>
       var loadFile = function(event) {
         var output = document.getElementById('output');
