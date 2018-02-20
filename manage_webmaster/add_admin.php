@@ -50,13 +50,13 @@
             <!-- Page Title Area -->
             <div class="row page-title clearfix">
                 <div class="page-title-left">
-                    <h6 class="page-title-heading mr-0 mr-r-5">Add Admin Users</h6>
+                    <h6 class="page-title-heading mr-0 mr-r-5">Tambahkan Pengguna Admin</h6>
                     
                 </div>
                 <!-- /.page-title-left -->
                 <div class="page-title-right d-none d-sm-inline-flex">
                     
-                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="view_admin_users.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple">View Admin Users</a>
+                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="view_admin_users.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple">Lihat Pengguna Admin</a>
                     </div>
                 </div>
                 <!-- /.page-title-right -->
@@ -95,25 +95,25 @@
                     <div class="col-md-6 widget-holder">
                         <div>
                             <div class="widget-body clearfix">
-                                <h5 class="box-title mr-b-0">Add Admin Users</h5>
+                                <h5 class="box-title mr-b-0">Tambahkan Pengguna Admin</h5>
                                 <p class="text-muted"></p>
                                 <form method="post">
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="l0">Admin Name</label>
+                                        <label class="col-md-3 col-form-label" for="l0">Nama admin</label>
                                         <div class="col-md-9">
-                                            <input class="form-control" id="l0" placeholder="Enter Admin Name" type="text" required name="admin_name">
+                                            <input class="form-control" id="l0" placeholder="Masukkan Nama Admin" type="text" required name="admin_name">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="l0">Admin Email</label>
+                                        <label class="col-md-3 col-form-label" for="l0">Email Admin</label>
                                         <div class="col-md-9">
-                                            <input type="email" class="form-control"  placeholder="Enter Admin Email"   name="admin_email" required>
+                                            <input type="email" class="form-control"  placeholder="Masukkan Email Admin"   name="admin_email" required>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="l0">Admin Password</label>
+                                        <label class="col-md-3 col-form-label" for="l0">Password Admin</label>
                                         <div class="col-md-9">
-                                            <input type="email" class="form-control"  placeholder="Enter Admin Password"   name="admin_password" required>
+                                            <input type="email" class="form-control"  placeholder="Masukkan Password Admin"   name="admin_password" required>
                                         </div>
                                     </div>
                                     <?php $getStatus = getAllData('lkp_status');?>
@@ -121,7 +121,7 @@
                                         <label class="col-md-3 col-form-label" for="l0">Status</label>
                                         <div class="col-md-9">
                                             <select class="form-control" id="lkp_status_id" name="lkp_status_id" required>
-                                                <option value="">-- Select Status --</option>
+                                                <option value="">-- Pilih Status --</option>
                                                 <?php while($row = $getStatus->fetch_assoc()) {  ?>
                                               <option value="<?php echo $row['id']; ?>"><?php echo $row['status']; ?></option>
                                           <?php } ?>
@@ -130,7 +130,7 @@
                                     </div>
                                     
                                     <div class="form-actions btn-list">
-                                        <center><button class="btn btn-primary" type="submit" name="submit">Submit</button></center>
+                                        <center><button class="btn btn-primary" type="submit" name="submit">Menyerahkan</button></center>
                                         
                                     </div>
                                 </form>
