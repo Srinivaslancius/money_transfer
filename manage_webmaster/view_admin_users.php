@@ -98,7 +98,8 @@
                                             <td><?php echo $row['admin_name']; ?></td>
                                             <td><?php echo $row['admin_email']; ?></td>
                                             <td><?php echo $row['created_at']; ?></td>
-                                            <td><?php if ($row['lkp_status_id']==0) { echo "<span class='label label-outline-success check_active open_cursor' data-incId=".$row['id']." data-status=".$row['lkp_status_id']." data-tbname='admin_users'>Active</span>" ;} else { echo "<span class='label label-outline-info check_active open_cursor' data-status=".$row['lkp_status_id']." data-incId=".$row['id']." data-tbname='admin_users'>In Active</span>" ;} ?></td>
+                                            <td><?php if($row['lkp_status_id']==0) { echo "Active";} else { echo "InActive";}  ?></td>
+                                            <!-- <td><?php if ($row['lkp_status_id']==0) { echo "<span class='label label-outline-success check_active open_cursor' data-incId=".$row['id']." data-status=".$row['lkp_status_id']." data-tbname='admin_users'>Active</span>" ;} else { echo "<span class='label label-outline-info check_active open_cursor' data-status=".$row['lkp_status_id']." data-incId=".$row['id']." data-tbname='admin_users'>In Active</span>" ;} ?></td> -->
                                             <!-- <td><a href="edit_religions.php?bid=<?php echo $row['id']; ?>"><i class="fa fa-edit"></i></a></td> -->
                                             <!-- <td>November 8th 2011</td>
                                             <td>July 25th 1960</td> -->

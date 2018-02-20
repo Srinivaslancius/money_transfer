@@ -93,7 +93,8 @@
                                             <td><?php echo $row['user_mobile']; ?></td>
                                             <td><?php echo $row['nik']; ?></td>
                                             <td><?php echo $row['amount']; ?></td>
-                                            <td><?php echo $row['lkp_status_id']; ?></td>
+                                            <td><?php if($row['lkp_status_id']==0) { echo "Active";} else { echo "InActive";}  ?></td>
+                                            
                                         </tr>
                                         <?php } ?>                                        
                                     </tbody>
