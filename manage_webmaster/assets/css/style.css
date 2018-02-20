@@ -26109,6 +26109,17 @@ SIDEBAR
     .fa.fa-edit{
       font-size: 20px;
     }
+.button1 {
+    background-color: transparent;
+    border-color: #4CAF50;
+    color: #4CAF50;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 0px 6px;
+}
 
 /********************************
 *********************************

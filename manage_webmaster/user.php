@@ -47,6 +47,9 @@
         <!-- /.site-sidebar -->
         <main class="main-wrapper clearfix">
             <!-- Page Title Area -->
+            <?php 
+               $getUsers = "SELECT * FROM users ORDER BY lkp_status_id, id DESC";
+               $getUsersData = $conn->query($getUsers); $i=1; ?>
             <div class="row page-title clearfix">
                 <div class="page-title-left">
                     <h6 class="page-title-heading mr-0 mr-r-5">User Registration</h6>
