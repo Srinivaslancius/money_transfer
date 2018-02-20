@@ -39,14 +39,14 @@
             <!-- Page Title Area -->
             <div class="row page-title clearfix">
                 <div class="page-title-left">
-                    <h6 class="page-title-heading mr-0 mr-r-5">View Districts</h6>
+                    <h6 class="page-title-heading mr-0 mr-r-5">Lihat Distrik</h6>
                     
                 </div>
                 <!-- /.page-title-left -->
 
                 <div class="page-title-right d-none d-sm-inline-flex">
                     
-                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="add_districts.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple">Add  Districts</a>
+                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="add_districts.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple">Tambahkan Distrik</a>
                     </div>
                 </div>
                 <!-- /.page-title-right -->
@@ -62,7 +62,7 @@
                     <div class="col-md-12 widget-holder">
                         <div class="widget-bg">
                             <div class="widget-heading clearfix">
-                                <h5>View Districts</h5>
+                                <h5>Lihat Distrik</h5>
                             </div>
                             <!-- /.widget-heading -->
                             <div class="widget-body clearfix">
@@ -70,9 +70,9 @@
                                     <thead>
                                         <tr>
                                             <th data-identifier>ID</th>
-                                            <th data-editable>District Name</th>
+                                            <th data-editable>Nama kabupaten</th>
                                             <th data-editable>Status</th>
-                                            <th>Actions</th>
+                                            <th>Tindakan</th>
                                             <!-- <th data-editable>Last Name</th>
                                             <th data-editable>Job Title</th>
                                             <th>Started On</th>
