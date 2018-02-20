@@ -7,11 +7,13 @@ $lists = array();
 $response = array();
 if($_SERVER['REQUEST_METHOD']=='POST'){
 
-	if (isset($_REQUEST['userEmail']) && !empty($_REQUEST['userPassword'])  ) {
-
-		 	$user_email = $_REQUEST['userEmail'];
-		    $user_password = encryptPassword($_REQUEST['userPassword']);
-		    $getLoginData = userLogin($user_email,$user_password);
+	if (isset($_REQUEST['nik']) && !empty($_REQUEST['nik'])  ) {
+		 	
+		 	$nik = $_REQUEST['nik'];
+		    
+		    //$getLoginData = userLogin($user_email,$nik);
+		    $getLoginData1 = "SELECT * FROM users WHERE nik='$nik' AND lkp_status_id=0";
+		    $getLoginData = $conn->query($getLoginData1);
 		    //Set variable for session
 		    if($getLoggedInDetails = $getLoginData->fetch_assoc()) {
 		    	$last_login_visit = date("Y-m-d h:i:s");
@@ -25,13 +27,26 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		    	$response["userMobile"] = $getLoggedInDetails['user_mobile'];
 		    	$response["amount"] = $getLoggedInDetails['amount'];
 		    	$response["authKey"] = $getLoggedInDetails['auth_key'];
-		    	$response["qrCodeImage"] = $base_url."manage_webmaster/qr_code/temp/".$getLoggedInDetails["qr_img_code"];
+		    	$response["createdAt"] = $getLoggedInDetails['created_at'];
+		    	$response["birthPlace"] = $getLoggedInDetails['birth_place'];
+		    	$response["dob"] = $getLoggedInDetails['dob'];
+		    	$response["validUntil"] = $getLoggedInDetails['valid_until'];
+		    	if($getLoggedInDetails['valid_until'] == 1) {
+		    		$gender = "Male";
+		    	} else {
+		    		$gender = "Female";
+		    	}
+		    	$response["gender"] = $gender;
+		    	$response["address"] = $getLoggedInDetails['address'];
+		    	$response["rt/rw"] = $getLoggedInDetails['rt/rw'];
+		    	$response["ex/village"] = $getLoggedInDetails['ex/village'];		    	
+		    	$response["userImage"] = $base_url."uploads/user_images/".$getLoggedInDetails["qr_img_code"];
 		    	$response["success"] = 0;
 				$response["message"] = "Keberhasilan!.";
 			} else {
 
 				$response["success"] = 1;
-				$response["message"] = "Harap masukkan credentails yang valid!";
+				$response["message"] = "Silahkan masukkan nomor NIK yang valid!";
 			}	
 
 	} else {
