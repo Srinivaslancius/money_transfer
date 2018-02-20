@@ -39,13 +39,13 @@
             <!-- Page Title Area -->
             <div class="row page-title clearfix">
                 <div class="page-title-left">
-                    <h6 class="page-title-heading mr-0 mr-r-5">View Users</h6>
+                    <h6 class="page-title-heading mr-0 mr-r-5">Lihat Pengguna</h6>
                     
                 </div>
                 <!-- /.page-title-left -->
                 <div class="page-title-right d-none d-sm-inline-flex">
                     
-                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="user.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple">Add Users</a>
+                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="user.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple">Tambahkan Pengguna</a>
                     </div>
                 </div>
                 <!-- /.page-title-right -->
@@ -61,7 +61,7 @@
                     <div class="col-md-12 widget-holder">
                         <div class="widget-bg">
                             <div class="widget-heading clearfix">
-                                <h5>View Users</h5>
+                                <h5>Lihat Pengguna</h5>
                             </div>
                             <!-- /.widget-heading -->
                             <div class="widget-body clearfix">
@@ -69,12 +69,12 @@
                                     <thead>
                                         <tr>
                                             <th>S.No</th>
-                                            <th>User Id</th>
-                                            <th>First Name</th>
-                                            <th>Email</th>
+                                            <th>Identitas pengguna</th>
+                                            <th>Nama depan</th>
+                                            <th>E-mail</th>
                                             <th>Mobile</th>
-                                            <th>Nik</th>
-                                            <th>Amount</th>
+                                            <th>Saya</th>
+                                            <th>Jumlah</th>
                                             <th>Status</th>
                                         </tr>
                                     </thead>
@@ -97,7 +97,7 @@
                                             <td><?php  echo "-"; ?></td>
                                             <?php } ?>
                                             <td><?php if ($row['lkp_status_id']==0) { echo "<button class='button1'>Active</button>";} else { echo "<button class='button2'>InActive</button>"; }  ?>
-                                                &nbsp;&nbsp;<a href="javascript:void(0)">View</a>
+                                                &nbsp;&nbsp;<a href="javascript:void(0)">Melihat</a>
                                             </td>
                                         </tr>
                                         <?php } ?>                                        
