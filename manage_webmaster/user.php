@@ -49,13 +49,13 @@
             <!-- Page Title Area -->
             <div class="row page-title clearfix">
                 <div class="page-title-left">
-                    <h6 class="page-title-heading mr-0 mr-r-5">User Registration</h6>
+                    <h6 class="page-title-heading mr-0 mr-r-5">Pendaftaran Pengguna</h6>
                     
                 </div>
                 <!-- /.page-title-left -->
                 <div class="page-title-right d-none d-sm-inline-flex">
                     
-                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="view_users.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple">View Users</a>
+                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="view_users.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple">Lihat pengguna</a>
                     </div>
                 </div>
                 <!-- /.page-title-right -->
@@ -70,33 +70,33 @@
                     <div class="col-md-6 widget-holder">
                         <div>
                             <div class="widget-body clearfix">
-                                <h5 class="box-title mr-b-0">Regitsration Form</h5>
+                                <h5 class="box-title mr-b-0">Formulir Registrasi</h5>
                                 <p class="text-muted"></p>
                                 <form method="post" action="Verification.php">
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="l0">Name</label>
+                                        <label class="col-md-3 col-form-label" for="l0">Nama</label>
                                         <div class="col-md-9">
-                                            <input class="form-control" id="l0" placeholder="Enter Your Name" type="text" required name="name">
+                                            <input class="form-control" id="l0" placeholder="masukkan nama Anda" type="text" required name="name">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="l0">Email</label>
+                                        <label class="col-md-3 col-form-label" for="l0">E-mail</label>
                                         <div class="col-md-9">
-                                            <input class="form-control" id="l0" placeholder="Enter Your Email" type="email" required name="user_email">
+                                            <input class="form-control" id="l0" placeholder="Masukkan email Anda" type="email" required name="user_email">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-md-3 col-form-label" for="l0">Mobile</label>
                                         <div class="col-md-9">
-                                            <input class="form-control valid_mobile_num" id="l0" maxlength="10" placeholder="Enter Your Mobile" type="text" required name="user_mobile">
+                                            <input class="form-control valid_mobile_num" id="l0" maxlength="10" placeholder="Masukkan Mobile Anda" type="text" required name="user_mobile">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="l0">The Place / Birth Date</label>
+                                        <label class="col-md-3 col-form-label" for="l0">Tempat / Tanggal lahir</label>
                                         <div class="col-md-9">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <input class="form-control" id="l0" placeholder="Enter Birth Place" type="text" name="birth_place" required>
+                                                    <input class="form-control" id="l0" placeholder="Masukkan Tempat Kelahiran" type="text" name="birth_place" required>
                                                 </div>
                                                 <div class="col-md-6 input-group">
                                                     <input type="text" class="form-control datepicker" data-plugin-options='{"autoclose": true,dateFormat: yyyy-mm-dd}' name="dob" required> <span class="input-group-addon"><i class="list-icon material-icons">date_range</i></span>
@@ -105,7 +105,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="l0">Gender</label>
+                                        <label class="col-md-3 col-form-label" for="l0">Jenis kelamin</label>
                                         <div class="col-md-9">
                                             <div class="radiobox">
                                                 <label>
@@ -118,27 +118,27 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="l0">Address</label>
+                                        <label class="col-md-3 col-form-label" for="l0">Alamat</label>
                                         <div class="col-md-9">
-                                            <textarea class="form-control" id="l15" rows="3" name="address" required></textarea>
+                                            <textarea class="form-control" id="l15" rows="3" name="masukkan alamat anda" required></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-md-3 col-form-label" for="l0">RT / RW</label>
                                         <div class="col-md-9">
-                                            <input class="form-control" id="l0" placeholder="Enter RT / RW" type="text" required name="rt/rw">
+                                            <input class="form-control" id="l0" placeholder="Masukkan RT / RW" type="text" required name="rt/rw">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="l0">EX / Village</label>
+                                        <label class="col-md-3 col-form-label" for="l0">EX / Desa</label>
                                         <div class="col-md-9">
-                                            <input class="form-control" id="l0" placeholder="Enter EX / Village" type="text" required name="ex/village">
+                                            <input class="form-control" id="l0" placeholder="Masukkan EX / Desa" type="text" required name="ex/village">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="l0">District</label>
+                                        <label class="col-md-3 col-form-label" for="l0">Distrik</label>
                                         <div class="col-md-9">
-                                            <select class="form-control" id="district" name="district" required>
+                                            <select class="form-control" id="district" name="masukkan distrikmu" required>
                                                 <option>Option 1</option>
                                                 <option>Option 2</option>
                                                 <option>Option 3</option>
@@ -148,7 +148,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="l0">Religion</label>
+                                        <label class="col-md-3 col-form-label" for="l0">Agama</label>
                                         <div class="col-md-9">
                                             <select class="form-control" id="religion" name="religion" required>
                                                 <option>Option 1</option>
@@ -160,29 +160,29 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="l0">Martial Status</label>
+                                        <label class="col-md-3 col-form-label" for="l0">Status pernikahan</label>
                                         <div class="col-md-9">
                                             <select class="form-control" id="martial_status" name="martial_status" required>
-                                                <option value="">Select Martial Status</option>
+                                                <option value="">Memilih Status pernikahan</option>
                                                 <option value="1">Single</option>
                                                 <option value="2">Married</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="l0">Work</label>
+                                        <label class="col-md-3 col-form-label" for="l0">Kerja</label>
                                         <div class="col-md-9">
-                                            <input class="form-control" id="l0" placeholder="Enter Your Work" type="text" name="work" required>
+                                            <input class="form-control" id="l0" placeholder="Masukkan Pekerjaan Anda" type="text" name="work" required>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="l0">Citizenship</label>
+                                        <label class="col-md-3 col-form-label" for="l0">Kewarganegaraan</label>
                                         <div class="col-md-9">
-                                            <input class="form-control" id="l0" placeholder="Enter Your Citizenship" type="text" name="citizenship" required>
+                                            <input class="form-control" id="l0" placeholder="Masukkan Kewarganegaraan Anda" type="text" name="citizenship" required>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="form-control-label col-md-3">Valid Until</label>
+                                        <label class="form-control-label col-md-3">Berlaku hingga</label>
                                         <div class="input-group col-md-9">
                                             <input type="text" class="form-control datepicker" data-plugin-options='{"autoclose": true,dateFormat: yyyy-mm-dd}' name="valid_until" required> <span class="input-group-addon"><i class="list-icon material-icons">date_range</i></span>
                                         </div>
@@ -190,7 +190,7 @@
                                     </div>
                                     
                                     <div class="form-actions btn-list">
-                                        <center><button class="btn btn-primary" type="submit" name="submit">Continue / Proceed</button></center>
+                                        <center><button class="btn btn-primary" type="submit" name="submit">Terus / Memproses</button></center>
                                         
                                     </div>
                                 </form>
