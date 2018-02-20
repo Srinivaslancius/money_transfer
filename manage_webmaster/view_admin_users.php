@@ -49,13 +49,13 @@
             <!-- Page Title Area -->
             <div class="row page-title clearfix">
                 <div class="page-title-left">
-                    <h6 class="page-title-heading mr-0 mr-r-5">View Admin Users</h6>
+                    <h6 class="page-title-heading mr-0 mr-r-5">Lihat Pengguna Admin</h6>
                     
                 </div>
                 <!-- /.page-title-left -->
                 <div class="page-title-right d-none d-sm-inline-flex">
         
-                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="add_admin.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple">Add  Admin Users</a>
+                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="add_admin.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple">Tambahkan Pengguna Admin</a>
                     </div>
                 </div>
                 <!-- /.page-title-right -->
@@ -71,7 +71,7 @@
                     <div class="col-md-12 widget-holder">
                         <div class="widget-bg">
                             <div class="widget-heading clearfix">
-                                <h5>View Admin Users</h5>
+                                <h5>Lihat Pengguna Admin</h5>
             
                             </div>
                             <!-- /.widget-heading -->
@@ -80,9 +80,9 @@
                                     <thead>
                                         <tr>
                                             <th data-identifier>ID</th>
-                                            <th data-editable>Admin Name</th>
-                                            <th data-editable>Admin Email</th>
-                                            <th data-editable>Created Date</th>
+                                            <th data-editable>Nama admin</th>
+                                            <th data-editable>Email Admin</th>
+                                            <th data-editable>Tanggal Dibuat</th>
                                             <th>Status</th>
                                             <!-- <th>Actions</th> -->
                                             <!-- <th>Started On</th>
