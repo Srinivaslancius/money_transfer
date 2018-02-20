@@ -52,13 +52,13 @@
                $getUsersData = $conn->query($getUsers); $i=1; ?>
             <div class="row page-title clearfix">
                 <div class="page-title-left">
-                    <h6 class="page-title-heading mr-0 mr-r-5">User Registration</h6>
+                    <h6 class="page-title-heading mr-0 mr-r-5">pendaftaran pengguna</h6>
                     
                 </div>
                 <!-- /.page-title-left -->
                 <div class="page-title-right d-none d-sm-inline-flex">
                     
-                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="view_users.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple">View Users</a>
+                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="view_users.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple">Lihat Pengguna</a>
                     </div>
                 </div>
                 <!-- /.page-title-right -->
@@ -73,7 +73,7 @@
                     <div class="col-md-6 widget-holder">
                         <div>
                             <div class="widget-body clearfix">
-                                <h5 class="box-title mr-b-0">User Registration</h5>
+                                <h5 class="box-title mr-b-0">pendaftaran pengguna</h5>
                                 <p class="text-muted"></p>
                                 <form method="post" action="Verification.php">
                                     <div class="form-group row">
@@ -112,10 +112,10 @@
                                         <div class="col-md-9">
                                             <div class="radiobox">
                                                 <label>
-                                                    <input type="radio" name="gender" value="1" checked="checked" required> <span class="label-text">Male &nbsp;</span>
+                                                    <input type="radio" name="gender" value="1" checked="checked" required> <span class="label-text">Pria &nbsp;</span>
                                                 </label>
                                                 <label>
-                                                    <input type="radio" name="gender" value="2" checked="checked" required> <span class="label-text">Female</span>
+                                                    <input type="radio" name="gender" value="2" checked="checked" required> <span class="label-text">Wanita</span>
                                                 </label>
                                             </div>
                                         </div>
