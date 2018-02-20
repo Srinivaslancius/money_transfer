@@ -140,10 +140,10 @@
                                     </div>
                                     <?php $getDistricts = getAllDataWithStatus('lkp_districts','0');?>
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="l0">District</label>
+                                        <label class="col-md-3 col-form-label" for="l0">Distrik</label>
                                         <div class="col-md-9">
                                             <select class="form-control" id="lkp_district_id" name="lkp_district_id" required>
-                                                <option value="">-- Select District --</option>
+                                                <option value="">-- Pilih Distrik --</option>
                                                 <?php while($row = $getDistricts->fetch_assoc()) {  ?>
                                               <option value="<?php echo $row['id']; ?>"><?php echo $row['district_name']; ?></option>
                                           <?php } ?>
@@ -153,10 +153,10 @@
                                     <?php $getReligion = getAllDataWithStatus('lkp_religion','0');?>
                                     
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="l0">Religion</label>
+                                        <label class="col-md-3 col-form-label" for="l0">Agama</label>
                                         <div class="col-md-9">
                                             <select class="form-control" id="religion" name="religion" required>
-                                                <option value="">-- Select Religion --</option>
+                                                <option value="">-- Pilih Agama --</option>
                                                 <?php while($row = $getReligion->fetch_assoc()) {  ?>
                                               <option value="<?php echo $row['id']; ?>"><?php echo $row['religion_name']; ?></option>
                                                 <?php } ?>
