@@ -20,7 +20,6 @@
         <nav class="navbar">
             <!-- Logo Area -->
             <?php include_once './topbar.php';?>
-            <?php include_once './meta.php';?>
     <!-- /.navbar-right -->
     <!-- Right Menu -->
     
