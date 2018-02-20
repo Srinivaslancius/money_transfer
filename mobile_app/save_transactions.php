@@ -43,6 +43,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		    	$conn->query($updateMerchantTransamnt);
 
 		    	$response["success"] = 0;
+		    	$response["transactionId"] = $transaction_id;
 				$response["message"] = "Keberhasilan!";
 
 		    } else {
