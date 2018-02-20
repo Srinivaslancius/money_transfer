@@ -48,14 +48,13 @@
             <!-- Page Title Area -->
             <div class="row page-title clearfix">
                 <div class="page-title-left">
-                    <h6 class="page-title-heading mr-0 mr-r-5">View Districts</h6>
+                    <h6 class="page-title-heading mr-0 mr-r-5">View Religion</h6>
                     
                 </div>
                 <!-- /.page-title-left -->
-
                 <div class="page-title-right d-none d-sm-inline-flex">
-                    
-                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="add_districts.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple">Add  Districts</a>
+        
+                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="add_religions.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple">Add  Religion</a>
                     </div>
                 </div>
                 <!-- /.page-title-right -->
@@ -71,7 +70,8 @@
                     <div class="col-md-12 widget-holder">
                         <div class="widget-bg">
                             <div class="widget-heading clearfix">
-                                <h5>View Districts</h5>
+                                <h5>View Religion</h5>
+            
                             </div>
                             <!-- /.widget-heading -->
                             <div class="widget-body clearfix">
@@ -79,26 +79,28 @@
                                     <thead>
                                         <tr>
                                             <th data-identifier>ID</th>
-                                            <th data-editable>District Name</th>
+                                            <th data-editable>Religion Name</th>
                                             <th data-editable>Status</th>
                                             <th>Actions</th>
-                                            <!-- <th data-editable>Last Name</th>
-                                            <th data-editable>Job Title</th>
-                                            <th>Started On</th>
+                                            <!-- <th>Started On</th>
                                             <th>Date of Birth</th> -->
                                         </tr>
                                     </thead>
+                                    
                                     <tbody>
-                                        <?php $getDisricts = getAllDataWithActiveRecent('lkp_districts'); $i=1; ?>
-                                        <?php while ($row = $getDisricts->fetch_assoc()) { ?>
+                                        <?php $getReligions = getAllDataWithActiveRecent('lkp_religion'); $i=1; ?>
+                                        <?php while ($row = $getReligions->fetch_assoc()) { ?>
                                         <tr data-expanded="true">
                                             <td><?php echo $i; ?></td>
-                                            <td><?php echo $row['district_name']; ?></td>
+                                            <td><?php echo $row['religion_name']; ?></td>
                                             <td><?php if ($row['lkp_status_id']==0) { echo "<span class='label label-outline-success check_active open_cursor' data-incId=".$row['id']." data-status=".$row['lkp_status_id']." data-tbname='lkp_religion'>Active</span>" ;} else { echo "<span class='label label-outline-info check_active open_cursor' data-status=".$row['lkp_status_id']." data-incId=".$row['id']." data-tbname='lkp_religion'>In Active</span>" ;} ?></td>
-                                            <td><a href="edit_districts.php?bid=<?php echo $row['id']; ?>"><i class="zmdi zmdi-edit"></i>Edit</a></td>
+                                            <td><a href="edit_religions.php?bid=<?php echo $row['id']; ?>"><i class="zmdi zmdi-edit"></i>Edit</a></td>
+                                            <!-- <td>November 8th 2011</td>
+                                            <td>July 25th 1960</td> -->
                                         </tr>
-                                        <?php $i++; } ?>
+                                        
                                     </tbody>
+                                    <?php $i++; } ?>
                                 </table>
                             </div>
                             <!-- /.widget-body -->
