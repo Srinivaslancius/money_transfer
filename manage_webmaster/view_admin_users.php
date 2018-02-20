@@ -1,5 +1,14 @@
 
-<?php include_once 'meta.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/demo/favicon.png">
+    <link rel="stylesheet" href="assets/css/pace.css">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Editable Table</title>
     <!-- CSS -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600|Roboto:400" rel="stylesheet" type="text/css">
     <link href="assets/vendors/material-icons/material-icons.css" rel="stylesheet" type="text/css">
@@ -9,6 +18,7 @@
     <link href="cdnjs.cloudflare.com/ajax/libs/jquery-footable/3.1.4/footable.bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="cdnjs.cloudflare.com/ajax/libs/datatables/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Head Libs -->
     <script src="cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     <script data-pace-options='{ "ajax": false, "selectors": [ "img" ]}' src="cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
@@ -19,15 +29,14 @@
         <!-- HEADER & TOP NAVIGATION -->
         <nav class="navbar">
             <!-- Logo Area -->
-            <?php include_once './meta.php';?>
             <?php include_once './topbar.php';?>
+            <?php include_once './meta.php';?>
     <!-- /.navbar-right -->
     <!-- Right Menu -->
     
     <!-- /.navbar-right -->
     </nav>
     <!-- /.navbar -->
-    
     <div class="content-wrapper">
         <!-- SIDEBAR -->
         <aside class="site-sidebar scrollbar-enabled" data-suppress-scroll-x="true">
@@ -40,13 +49,13 @@
             <!-- Page Title Area -->
             <div class="row page-title clearfix">
                 <div class="page-title-left">
-                    <h6 class="page-title-heading mr-0 mr-r-5">View Users</h6>
+                    <h6 class="page-title-heading mr-0 mr-r-5">View Admin Users</h6>
                     
                 </div>
                 <!-- /.page-title-left -->
                 <div class="page-title-right d-none d-sm-inline-flex">
-                    
-                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="user.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple" target="_blank">Add Users</a>
+        
+                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="add_admin.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple">Add  Admin Users</a>
                     </div>
                 </div>
                 <!-- /.page-title-right -->
@@ -62,41 +71,41 @@
                     <div class="col-md-12 widget-holder">
                         <div class="widget-bg">
                             <div class="widget-heading clearfix">
-                                <h5>View Users</h5>
+                                <h5>View Admin Users</h5>
+            
                             </div>
                             <!-- /.widget-heading -->
                             <div class="widget-body clearfix">
                                 <table class="table table-editable table-responsive" data-toggle="datatables">
                                     <thead>
                                         <tr>
-                                            <th>S.No</th>
-                                            <th>User Id</th>
-                                            <th>First Name</th>
-                                            <th>Email</th>
-                                            <th>Mobile</th>
-                                            <th>Nik</th>
-                                            <th>Amount</th>
+                                            <th data-identifier>ID</th>
+                                            <th data-editable>Admin Name</th>
+                                            <th data-editable>Admin Email</th>
+                                            <th data-editable>Created Date</th>
                                             <th>Status</th>
+                                            <!-- <th>Actions</th> -->
+                                            <!-- <th>Started On</th>
+                                            <th>Date of Birth</th> -->
                                         </tr>
                                     </thead>
+                                    
                                     <tbody>
-                                        <?php 
-                                       $getUsers = "SELECT * FROM users ORDER BY lkp_status_id, id DESC";
-                                       $getUsersData = $conn->query($getUsers); $i=1; ?>
-                                       <?php while ($row = $getUsersData->fetch_assoc()) { 
-                                            ?>
+                                        <?php $getAdminUsers = getAllDataWithActiveRecent('admin_users'); $i=1; ?>
+                                        <?php while ($row = $getAdminUsers->fetch_assoc()) { ?>
                                         <tr data-expanded="true">
                                             <td><?php echo $i; ?></td>
-                                            <td><?php echo $row['user_id']; ?></td>
-                                            <td><?php echo $row['user_full_name']; ?></td>
-                                            <td><?php echo $row['user_email']; ?></td>
-                                            <td><?php echo $row['user_mobile']; ?></td>
-                                            <td><?php echo $row['nik']; ?></td>
-                                            <td><?php echo $row['amount']; ?></td>
-                                            <td><?php echo $row['lkp_status_id']; ?></td>
+                                            <td><?php echo $row['admin_name']; ?></td>
+                                            <td><?php echo $row['admin_email']; ?></td>
+                                            <td><?php echo $row['created_at']; ?></td>
+                                            <td><?php if ($row['lkp_status_id']==0) { echo "<span class='label label-outline-success check_active open_cursor' data-incId=".$row['id']." data-status=".$row['lkp_status_id']." data-tbname='admin_users'>Active</span>" ;} else { echo "<span class='label label-outline-info check_active open_cursor' data-status=".$row['lkp_status_id']." data-incId=".$row['id']." data-tbname='admin_users'>In Active</span>" ;} ?></td>
+                                            <!-- <td><a href="edit_religions.php?bid=<?php echo $row['id']; ?>"><i class="fa fa-edit"></i></a></td> -->
+                                            <!-- <td>November 8th 2011</td>
+                                            <td>July 25th 1960</td> -->
                                         </tr>
-                                        <?php } ?>                                        
+                                        
                                     </tbody>
+                                    <?php $i++; } ?>
                                 </table>
                             </div>
                             <!-- /.widget-body -->
@@ -116,8 +125,7 @@
     </div>
     <!-- /.content-wrapper -->
     <!-- FOOTER -->
-    <footer class="footer"><span class="heading-font-family">Copyright @ 2018. All rights reserved by Arbeit Consultancy</span>
-    </footer>
+    <?php include_once 'footer.php'; ?>
     </div>
     <!--/ #wrapper -->
     <!-- Scripts -->

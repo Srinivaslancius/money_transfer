@@ -17,7 +17,7 @@
                 <ul class="nav in side-menu">
 
                     <li class="current-page"><a href="dashboard.php"><i class="list-icon feather feather-command"></i> <span class="hide-menu">Dasbor</span></a></li>
-                    <li><a href=""><i class="list-icon feather feather-command"></i> <span class="hide-menu">Login Admin</span></a></li>
+                    <li><a href="add_admin.php"><i class="list-icon feather feather-command"></i> <span class="hide-menu">Login Admin</span></a></li>
                     <li><a href="add_districts.php"><i class="list-icon feather feather-command"></i> <span class="hide-menu">Distrik</span></a></li>
                      <li><a href="add_religions.php"><i class="list-icon feather feather-command"></i> <span class="hide-menu">Agama</span></a></li>
                     <li><a href="user.php"><i class="list-icon feather feather-command"></i> <span class="hide-menu">Pengguna</span></a></li>                    

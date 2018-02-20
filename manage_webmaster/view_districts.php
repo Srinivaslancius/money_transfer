@@ -22,6 +22,7 @@
     <!-- Head Libs -->
     <script src="cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     <script data-pace-options='{ "ajax": false, "selectors": [ "img" ]}' src="cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+    
 </head>
 
 <body class="header-dark sidebar-light sidebar-expand">
@@ -76,7 +77,7 @@
                             </div>
                             <!-- /.widget-heading -->
                             <div class="widget-body clearfix">
-                                <table class="table table-editable table-responsive" data-toggle="datatables">
+                                <table class="table-responsive" data-toggle="datatables">
                                     <thead>
                                         <tr>
                                             <th data-identifier>ID</th>
@@ -95,7 +96,7 @@
                                         <tr data-expanded="true">
                                             <td><?php echo $i; ?></td>
                                             <td><?php echo $row['district_name']; ?></td>
-                                            <td><?php if ($row['lkp_status_id']==0) { echo "<span class='label label-outline-success check_active open_cursor' data-incId=".$row['id']." data-status=".$row['lkp_status_id']." data-tbname='lkp_religion'>Active</span>" ;} else { echo "<span class='label label-outline-info check_active open_cursor' data-status=".$row['lkp_status_id']." data-incId=".$row['id']." data-tbname='lkp_religion'>In Active</span>" ;} ?></td>
+                                           <td><button class="button1">Active</button></td>
                                             <td><a href="edit_districts.php?bid=<?php echo $row['id']; ?>"><i class="fa fa-edit"></i></a></td>
                                         </tr>
                                         <?php $i++; } ?>
