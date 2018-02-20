@@ -46,7 +46,7 @@
                 <!-- /.page-title-left -->
                 <div class="page-title-right d-none d-sm-inline-flex">
                     
-                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="user.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple" target="_blank">Add Users</a>
+                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="user.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple">Add Users</a>
                     </div>
                 </div>
                 <!-- /.page-title-right -->
@@ -97,7 +97,9 @@
                                             <?php } else {?>
                                             <td><?php  echo "-"; ?></td>
                                             <?php } ?>
-                                            <td><?php if ($row['lkp_status_id']==0) { echo "<button class='button1'>Active</button>";} else { echo "<button class='button2'>InActive</button>"; }  ?></td>
+                                            <td><?php if ($row['lkp_status_id']==0) { echo "<button class='button1'>Active</button>";} else { echo "<button class='button2'>InActive</button>"; }  ?>
+                                                
+                                            </td>
                                         </tr>
                                         <?php } ?>                                        
                                     </tbody>
