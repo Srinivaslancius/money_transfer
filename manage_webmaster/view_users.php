@@ -26,6 +26,7 @@
     <!-- /.navbar-right -->
     </nav>
     <!-- /.navbar -->
+    
     <div class="content-wrapper">
         <!-- SIDEBAR -->
         <aside class="site-sidebar scrollbar-enabled" data-suppress-scroll-x="true">
@@ -38,17 +39,13 @@
             <!-- Page Title Area -->
             <div class="row page-title clearfix">
                 <div class="page-title-left">
-                    <h6 class="page-title-heading mr-0 mr-r-5">Editable Table</h6>
-                    <p class="page-title-description mr-0 d-none d-md-inline-block">statistics, charts and events</p>
+                    <h6 class="page-title-heading mr-0 mr-r-5">View Users</h6>
+                    
                 </div>
                 <!-- /.page-title-left -->
                 <div class="page-title-right d-none d-sm-inline-flex">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index-2.html">Dashboard</a>
-                        </li>
-                        <li class="breadcrumb-item active">Editable Table</li>
-                    </ol>
-                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="javascript: void(0);" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple" target="_blank">Buy Now</a>
+                    
+                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="user.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple" target="_blank">Add Users</a>
                     </div>
                 </div>
                 <!-- /.page-title-right -->
@@ -64,14 +61,14 @@
                     <div class="col-md-12 widget-holder">
                         <div class="widget-bg">
                             <div class="widget-heading clearfix">
-                                <h5>Datatable Editable</h5>
+                                <h5>View Users</h5>
                             </div>
                             <!-- /.widget-heading -->
                             <div class="widget-body clearfix">
                                 <table class="table table-editable table-responsive" data-toggle="datatables">
                                     <thead>
                                         <tr>
-                                            <th data-identifier>ID</th>
+                                            <th data-identifier>S.No</th>
                                             <th data-editable>First Name</th>
                                             <th data-editable>Last Name</th>
                                             <th data-editable>Job Title</th>
@@ -80,11 +77,11 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php $getSubCategories = getAllDataWithActiveRecent('users'); $i=1; ?>
-                                        <?php while ($row = $getSubCategories->fetch_assoc()) { ?>
+                                        <?php $getSubUsersData = getAllDataWithActiveRecent('users'); $i=1; ?>
+                                        <?php while ($row = $getSubUsersData->fetch_assoc()) { ?>
                                         <tr data-expanded="true">
                                             <td><?php echo $i; ?></td>
-                                            <td><?php echo $row['sub_category_name']; ?></td>
+                                            <td><?php echo $row['user_full_name']; ?></td>
                                             <td><?php echo $row['sub_category_name']; ?></td>
                                             <td><?php echo $row['sub_category_name']; ?></td>
                                             <td><?php echo $row['sub_category_name']; ?></td>
