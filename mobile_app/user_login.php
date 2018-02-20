@@ -25,7 +25,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		    	$response["userMobile"] = $getLoggedInDetails['user_mobile'];
 		    	$response["amount"] = $getLoggedInDetails['amount'];
 		    	$response["authKey"] = $getLoggedInDetails['auth_key'];
-		    	$response["qrCodeImage"] = $base_url."manage_webmaster/temp/".$getLoggedInDetails["qr_img_code"];
+		    	$response["qrCodeImage"] = $base_url."manage_webmaster/qr_code/temp/".$getLoggedInDetails["qr_img_code"];
 		    	$response["success"] = 0;
 				$response["message"] = "Success!.";
 			} else {

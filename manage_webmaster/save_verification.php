@@ -104,6 +104,6 @@ if(!isset($_SESSION['admin_user_id'])) {
     $saveQrcodeData = "INSERT INTO `users`(`user_id`, `user_full_name`, `user_email`, `user_mobile`, `login_count`, `last_login_visit`, `created_at`, `user_password`, `birth_place`, `dob`, `gender`, `address`, `rt/rw`, `ex/village`, `lkp_district_id`, `lkp_religion_id`, `martial_status`, `work`, `nik`, `amount`, `qr_img_code`, `user_image`,`valid_until`,`auth_key`) VALUES ('$user_id','".$_REQUEST["user_full_name"]."','".$_REQUEST["user_email"]."','".$_REQUEST["user_mobile"]."','1','1','$created_at','".encryptPassword($_REQUEST["user_mobile"])."','".$_REQUEST["birth_place"]."','".$dob."','".$_REQUEST["gender"]."','".$_REQUEST["address"]."','".$_REQUEST["rt/rw"]."','".$_REQUEST["ex/village"]."','".$_REQUEST["lkp_district_id"]."','".$_REQUEST["lkp_religion"]."','".$_REQUEST["martial_status"]."','".$_REQUEST["work"]."','".$_REQUEST["data"]."','".$_REQUEST["amount"]."','$qrCodefilename','$user_image','".$_REQUEST["valid_until"]."','$generateAuthKey')";
     $conn->query($saveQrcodeData);
     //echo "<pre>"; print_r($_POST); die;
-    header("Location:user.php");
+    header("Location:view_users.php");
 
 ?>
