@@ -22,7 +22,7 @@
                      <li><a href="add_religions.php"><i class="list-icon feather feather-command"></i> <span class="hide-menu">Agama</span></a></li>
                     <li><a href="user.php"><i class="list-icon feather feather-command"></i> <span class="hide-menu">Pengguna</span></a></li>                    
                     <li><a href="add_merchants.php"><i class="list-icon feather feather-command"></i> <span class="hide-menu">Pedagang</span></a></li>
-                    <li><a href="orders.php"><i class="list-icon feather feather-command"></i> <span class="hide-menu">Pesanan</span></a></li>
+                    <li><a href="transactions.php"><i class="list-icon feather feather-command"></i> <span class="hide-menu">Transaksi</span></a></li>
                     
                 </ul>
                 <!-- /.side-menu -->
@@ -30,7 +30,7 @@
             <!-- /.sidebar-nav -->
             <div class="sidebar-module nav-contact-info mx-3 mt-4 mb-3">
                 <div class="d-flex flex-column align-items-center">
-                    <h6 class="mb-2 fs-14">Need Help</h6><i class="feather feather-bell fs-24 color-color-scheme"></i>
+                    <h6 class="mb-2 fs-14">Butuh bantuan</h6><i class="feather feather-bell fs-24 color-color-scheme"></i>
                 </div>
                 <!-- /.d-flex -->
                 <div class="contact-info-body bg-content-color-contrast text-center">

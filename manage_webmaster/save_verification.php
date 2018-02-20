@@ -86,7 +86,7 @@ if(!isset($_SESSION['admin_user_id'])) {
     $qrCodefilename = basename($filename);
     $created_at = date("Y-m-d h:i:s");
     //Generatre random id   
-    $randomDate = date("Ymd h:i:s");
+    $randomDate = date("Ymdh:i:s");
     $user_id = "MONEY_TRANSFER_USER".$randomDate.uniqid();
 
     $dob=$_REQUEST['dob'];

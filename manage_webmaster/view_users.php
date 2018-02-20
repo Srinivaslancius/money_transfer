@@ -98,7 +98,7 @@
                                             <td><?php  echo "-"; ?></td>
                                             <?php } ?>
                                             <td><?php if ($row['lkp_status_id']==0) { echo "<button class='button1'>Active</button>";} else { echo "<button class='button2'>InActive</button>"; }  ?>
-                                                
+                                                &nbsp;&nbsp;<a href="javascript:void(0)">View</a>
                                             </td>
                                         </tr>
                                         <?php } ?>                                        

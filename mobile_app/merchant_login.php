@@ -23,24 +23,25 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		    	$response["merchantName"] = $getLoggedInDetails['merchant_full_name'];
 		    	$response["merchantEmail"] = $getLoggedInDetails['merchant_email'];
 		    	$response["merchantMobile"] = $getLoggedInDetails['merchant_mobile'];
+		    	$response["merchantAmount"] = $getLoggedInDetails['amount'];
 				$response["authKey"] = $getLoggedInDetails['auth_key'];		    			    	
 		    	$response["success"] = 0;
-				$response["message"] = "Success!.";
+				$response["message"] = "Keberhasilan!.";
 			} else {
 
 				$response["success"] = 1;
-				$response["message"] = "Please enter valid credentails!";
+				$response["message"] = "Harap masukkan credentails yang valid!";
 			}	
 
 	} else {
 
 		$response["success"] = 2;
-		$response["message"] = "Required Fields Missings!";
+		$response["message"] = "Diperlukan Fields Missings!";
 	}
 
 } else {
 	$response["success"] = 3;
-	$response["message"] = "Invalid request";
+	$response["message"] = "Permintaan tidak valid";
 
 }
 echo json_encode($response);
