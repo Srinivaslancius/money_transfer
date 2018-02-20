@@ -40,13 +40,13 @@
             <!-- Page Title Area -->
             <div class="row page-title clearfix">
                 <div class="page-title-left">
-                    <h6 class="page-title-heading mr-0 mr-r-5">View Users</h6>
+                    <h6 class="page-title-heading mr-0 mr-r-5">View Merchants</h6>
                     
                 </div>
                 <!-- /.page-title-left -->
                 <div class="page-title-right d-none d-sm-inline-flex">
                     
-                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="user.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple">Add Users</a>
+                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="add_merchants.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple" >Add merchants</a>
                     </div>
                 </div>
                 <!-- /.page-title-right -->
@@ -62,7 +62,7 @@
                     <div class="col-md-12 widget-holder">
                         <div class="widget-bg">
                             <div class="widget-heading clearfix">
-                                <h5>View Users</h5>
+                                <h5>View Merchants</h5>
                             </div>
                             <!-- /.widget-heading -->
                             <div class="widget-body clearfix">
@@ -70,8 +70,8 @@
                                     <thead>
                                         <tr>
                                             <th>S.No</th>
-                                            <th>User Id</th>
-                                            <th>First Name</th>
+                                            <th>Merchant Id</th>
+                                            <th>Name</th>
                                             <th>Email</th>
                                             <th>Mobile</th>
                                             <th>Nik</th>
@@ -81,25 +81,23 @@
                                     </thead>
                                     <tbody>
                                         <?php 
-                                       $getUsers = "SELECT * FROM users ORDER BY lkp_status_id, id DESC";
-                                       $getUsersData = $conn->query($getUsers); $i=1; ?>
-                                       <?php while ($row = $getUsersData->fetch_assoc()) { 
+                                       $getMerchants = "SELECT * FROM merchants ORDER BY lkp_status_id, id DESC";
+                                       $getMerchantsData = $conn->query($getMerchants); $i=1; ?>
+                                       <?php while ($row = $getMerchantsData->fetch_assoc()) { 
                                             ?>
                                         <tr data-expanded="true">
                                             <td><?php echo $i; ?></td>
-                                            <td><?php echo $row['user_id']; ?></td>
-                                            <td><?php echo $row['user_full_name']; ?></td>
-                                            <td><?php echo $row['user_email']; ?></td>
-                                            <td><?php echo $row['user_mobile']; ?></td>
+                                            <td><?php echo $row['merchant_id']; ?></td>
+                                            <td><?php echo $row['merchant_full_name']; ?></td>
+                                            <td><?php echo $row['merchant_email']; ?></td>
+                                            <td><?php echo $row['merchant_mobile']; ?></td>
                                             <td><?php echo $row['nik']; ?></td>
                                             <?php if($row['amount'] !='') {?>
                                             <td><?php echo $row['amount']; ?></td>
                                             <?php } else {?>
                                             <td><?php  echo "-"; ?></td>
                                             <?php } ?>
-                                            <td><?php if ($row['lkp_status_id']==0) { echo "<button class='button1'>Active</button>";} else { echo "<button class='button2'>InActive</button>"; }  ?>
-                                                
-                                            </td>
+                                            <td><?php if ($row['lkp_status_id']==0) { echo "<button class='button1'>Active</button>";} else { echo "<button class='button2'>InActive</button>"; }  ?></td>
                                         </tr>
                                         <?php } ?>                                        
                                     </tbody>
