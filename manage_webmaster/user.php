@@ -49,13 +49,13 @@
             <!-- Page Title Area -->
             <div class="row page-title clearfix">
                 <div class="page-title-left">
-                    <h6 class="page-title-heading mr-0 mr-r-5">Pendaftaran Pengguna</h6>
+                    <h6 class="page-title-heading mr-0 mr-r-5">User Registration</h6>
                     
                 </div>
                 <!-- /.page-title-left -->
                 <div class="page-title-right d-none d-sm-inline-flex">
                     
-                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="view_users.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple">Lihat pengguna</a>
+                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="view_users.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple">View Users</a>
                     </div>
                 </div>
                 <!-- /.page-title-right -->
@@ -70,13 +70,13 @@
                     <div class="col-md-6 widget-holder">
                         <div>
                             <div class="widget-body clearfix">
-                                <h5 class="box-title mr-b-0">Formulir Registrasi</h5>
+                                <h5 class="box-title mr-b-0">User Registration</h5>
                                 <p class="text-muted"></p>
                                 <form method="post" action="Verification.php">
                                     <div class="form-group row">
                                         <label class="col-md-3 col-form-label" for="l0">Nama</label>
                                         <div class="col-md-9">
-                                            <input class="form-control" id="l0" placeholder="masukkan nama Anda" type="text" required name="name">
+                                            <input class="form-control" id="l0" placeholder="masukkan nama Anda" type="text" required name="user_full_name">
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -135,27 +135,28 @@
                                             <input class="form-control" id="l0" placeholder="Masukkan EX / Desa" type="text" required name="ex/village">
                                         </div>
                                     </div>
+                                    <?php $getDistricts = getAllDataWithStatus('lkp_districts','0');?>
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="l0">Distrik</label>
+                                        <label class="col-md-3 col-form-label" for="l0">District</label>
                                         <div class="col-md-9">
-                                            <select class="form-control" id="district" name="masukkan distrikmu" required>
-                                                <option>Option 1</option>
-                                                <option>Option 2</option>
-                                                <option>Option 3</option>
-                                                <option>Option 4</option>
-                                                <option>Option 5</option>
+                                            <select class="form-control" id="lkp_district_id" name="lkp_district_id" required>
+                                                <option value="">-- Select District --</option>
+                                                <?php while($row = $getDistricts->fetch_assoc()) {  ?>
+                                              <option value="<?php echo $row['id']; ?>"><?php echo $row['district_name']; ?></option>
+                                          <?php } ?>
                                             </select>
                                         </div>
                                     </div>
+                                    <?php $getReligion = getAllDataWithStatus('lkp_religion','0');?>
+                                    
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="l0">Agama</label>
+                                        <label class="col-md-3 col-form-label" for="l0">Religion</label>
                                         <div class="col-md-9">
                                             <select class="form-control" id="religion" name="religion" required>
-                                                <option>Option 1</option>
-                                                <option>Option 2</option>
-                                                <option>Option 3</option>
-                                                <option>Option 4</option>
-                                                <option>Option 5</option>
+                                                <option value="">-- Select Religion --</option>
+                                                <?php while($row = $getReligion->fetch_assoc()) {  ?>
+                                              <option value="<?php echo $row['id']; ?>"><?php echo $row['religion_name']; ?></option>
+                                                <?php } ?>
                                             </select>
                                         </div>
                                     </div>
@@ -214,8 +215,7 @@
     </div>
     <!-- /.content-wrapper -->
     <!-- FOOTER -->
-    <footer class="footer"><span class="heading-font-family">Copyright @ 2018. All rights reserved by Arbeit Consultancy</span>
-    </footer>
+    <?php include_once 'footer.php'; ?>
     </div>
     <!--/ #wrapper -->
     <!-- Scripts -->

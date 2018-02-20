@@ -18,6 +18,7 @@
     <link href="cdnjs.cloudflare.com/ajax/libs/jquery-footable/3.1.4/footable.bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="cdnjs.cloudflare.com/ajax/libs/datatables/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Head Libs -->
     <script src="cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     <script data-pace-options='{ "ajax": false, "selectors": [ "img" ]}' src="cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
@@ -94,7 +95,7 @@
                                             <td><?php echo $i; ?></td>
                                             <td><?php echo $row['religion_name']; ?></td>
                                             <td><?php if ($row['lkp_status_id']==0) { echo "<span class='label label-outline-success check_active open_cursor' data-incId=".$row['id']." data-status=".$row['lkp_status_id']." data-tbname='lkp_religion'>Active</span>" ;} else { echo "<span class='label label-outline-info check_active open_cursor' data-status=".$row['lkp_status_id']." data-incId=".$row['id']." data-tbname='lkp_religion'>In Active</span>" ;} ?></td>
-                                            <td><a href="edit_religions.php?bid=<?php echo $row['id']; ?>"><i class="zmdi zmdi-edit"></i>Edit</a></td>
+                                            <td><a href="edit_religions.php?bid=<?php echo $row['id']; ?>"><i class="fa fa-edit"></i></a></td>
                                             <!-- <td>November 8th 2011</td>
                                             <td>July 25th 1960</td> -->
                                         </tr>

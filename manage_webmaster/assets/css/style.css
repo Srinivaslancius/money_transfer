@@ -17231,7 +17231,9 @@ th.footable-sortable > span.fooicon {
     margin-left: 0.66667em; }
   .table-editable .tabledit-toolbar .btn-group .btn,
   .table-editable-inline .tabledit-toolbar .btn-group .btn {
-    cursor: pointer; }
+    cursor: pointer;
+    display: none;
+    }
     .table-editable .tabledit-toolbar .btn-group .btn span.glyphicon::before,
     .table-editable-inline .tabledit-toolbar .btn-group .btn span.glyphicon::before {
       font-family: "feather";
@@ -26104,6 +26106,9 @@ SIDEBAR
   .right-sidebar-dark .chat-panel textarea:-ms-input-placeholder {
     color: #fff;
     opacity: .7; }
+    .fa.fa-edit{
+      font-size: 20px;
+    }
 
 /********************************
 *********************************

@@ -116,7 +116,7 @@
                                     </div>
                                     
                                     <div class="form-actions btn-list">
-                                        <center><button class="btn btn-primary" type="submit" name="submit">Continue / Proceed</button></center>
+                                        <center><button class="btn btn-primary" type="submit" name="submit">Submit</button></center>
                                         
                                     </div>
                                 </form>
