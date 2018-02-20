@@ -1,14 +1,5 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/demo/favicon.png">
-    <link rel="stylesheet" href="assets/css/pace.css">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Editable Table</title>
+<?php include_once 'meta.php'; ?>
     <!-- CSS -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600|Roboto:400" rel="stylesheet" type="text/css">
     <link href="assets/vendors/material-icons/material-icons.css" rel="stylesheet" type="text/css">
@@ -49,13 +40,13 @@
             <!-- Page Title Area -->
             <div class="row page-title clearfix">
                 <div class="page-title-left">
-                    <h6 class="page-title-heading mr-0 mr-r-5">View Religion</h6>
+                    <h6 class="page-title-heading mr-0 mr-r-5">Lihat Agama</h6>
                     
                 </div>
                 <!-- /.page-title-left -->
                 <div class="page-title-right d-none d-sm-inline-flex">
         
-                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="add_religions.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple">Add  Religion</a>
+                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="add_religions.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple">Tambahkan Agama</a>
                     </div>
                 </div>
                 <!-- /.page-title-right -->
@@ -71,7 +62,7 @@
                     <div class="col-md-12 widget-holder">
                         <div class="widget-bg">
                             <div class="widget-heading clearfix">
-                                <h5>View Religion</h5>
+                                <h5>Lihat Agama</h5>
             
                             </div>
                             <!-- /.widget-heading -->
@@ -80,9 +71,9 @@
                                     <thead>
                                         <tr>
                                             <th data-identifier>ID</th>
-                                            <th data-editable>Religion Name</th>
+                                            <th data-editable>Nama agama</th>
                                             <th data-editable>Status</th>
-                                            <th>Actions</th>
+                                            <th>Tindakan</th>
                                             <!-- <th>Started On</th>
                                             <th>Date of Birth</th> -->
                                         </tr>

@@ -50,13 +50,13 @@
             <!-- Page Title Area -->
             <div class="row page-title clearfix">
                 <div class="page-title-left">
-                    <h6 class="page-title-heading mr-0 mr-r-5">Edit Religions</h6>
+                    <h6 class="page-title-heading mr-0 mr-r-5">Edit agama</h6>
                     
                 </div>
                 <!-- /.page-title-left -->
                 <div class="page-title-right d-none d-sm-inline-flex">
                     
-                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="view_districts.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple">View Religions</a>
+                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="view_districts.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple">Lihat Agama</a>
                     </div>
                 </div>
                 <!-- /.page-title-right -->
@@ -93,11 +93,11 @@
                     <div class="col-md-6 widget-holder">
                         <div>
                             <div class="widget-body clearfix">
-                                <h5 class="box-title mr-b-0">Edit Religions</h5>
+                                <h5 class="box-title mr-b-0">Edit agama</h5>
                                 <p class="text-muted"></p>
                                 <form method="post">
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="l0">Religion Name</label>
+                                        <label class="col-md-3 col-form-label" for="l0">Nama agama</label>
                                         <div class="col-md-9">
                                             <input class="form-control" id="l0" type="text" required name="religion_name" value="<?php echo $getReligionData['religion_name']; ?>">
                                         </div>
@@ -115,7 +115,7 @@
                                     </div>
                                     
                                     <div class="form-actions btn-list">
-                                        <center><button class="btn btn-primary" type="submit" name="submit">Update</button></center>
+                                        <center><button class="btn btn-primary" type="submit" name="submit">Memperbarui</button></center>
                                         
                                     </div>
                                 </form>
