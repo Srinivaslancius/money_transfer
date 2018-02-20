@@ -1,7 +1,14 @@
-<?php include_once 'meta.php'; ?>
-    <!-- CSS -->
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/demo/favicon.png">
     <link rel="stylesheet" href="assets/css/pace.css">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Default</title>
+    <!-- CSS -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600|Roboto:400" rel="stylesheet" type="text/css">
     <link href="assets/vendors/material-icons/material-icons.css" rel="stylesheet" type="text/css">
     <link href="assets/vendors/mono-social-icons/monosocialiconsfont.css" rel="stylesheet" type="text/css">
@@ -16,6 +23,7 @@
     <script src="cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     <script data-pace-options='{ "ajax": false, "selectors": [ "img" ]}' src="cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
 </head>
+
 <body class="header-dark sidebar-light sidebar-expand">
     <div id="wrapper" class="wrapper">
         <!-- HEADER & TOP NAVIGATION -->
@@ -41,7 +49,7 @@
             <div class="row page-title clearfix">
                 <div class="page-title-left">
                     <h6 class="page-title-heading mr-0 mr-r-5">Default</h6>
-                    <p class="page-title-description mr-0 d-none d-md-inline-block">statistics, charts and events</p>
+                    <p class="page-title-description mr-0 d-none d-md-inline-block"></p>
                 </div>
                 <!-- /.page-title-left -->
                 <div class="page-title-right d-none d-sm-inline-flex">
@@ -64,8 +72,8 @@
                         <div class="widget-body">
                             <div class="counter-gradient">
                                 <h3 class="fs-60 fw-600 mt-3 pt-1 h1 letter-spacing-minus"><span class="counter">6843</span></h3>
-                                <h5 class="mb-4 fw-500">New Registered Users</h5>
-                                <p class="text-muted">Number of all users who have registered
+                                <h5 class="mb-4 fw-500">pengguna terdaftar baru</h5>
+                                <p class="text-muted">Jumlah semua pengguna yang telah terdaftar
                                     </p>
                             </div>
                             <!-- /.widget-counter -->
@@ -74,7 +82,7 @@
                                     <h3 class="fs-60 fw-600 mt-3 pt-1 h1 letter-spacing-minus"><span class="counter">100</span></h3>
                                     <label class="d-flex flex-md-row flex-column align-items-center cursor-pointer">
                                         
-                                        <span class="text-muted mr-l-20 mr-l-0-rtl mr-r-20-rtl d-inline-block">Active Users</span>
+                                        <span class="text-muted mr-l-20 mr-l-0-rtl mr-r-20-rtl d-inline-block">Pengguna Aktif</span>
                                     </label>
                                 </div>
                                 <!-- /.col-6 -->
@@ -83,7 +91,7 @@
                                     <h3 class="fs-60 fw-600 mt-3 pt-1 h1 letter-spacing-minus"><span class="counter">100</span></h3>
                                     <label class="d-flex flex-md-row flex-column align-items-center cursor-pointer">
                                         
-                                        <span class="text-muted mr-l-20 mr-l-0-rtl mr-r-20-rtl d-inline-block">Inactive Users</span>
+                                        <span class="text-muted mr-l-20 mr-l-0-rtl mr-r-20-rtl d-inline-block">Pengguna Tidak Aktif</span>
                                     </label>
                                     <!-- /.col-6 -->
                                 </div>
@@ -98,8 +106,8 @@
                 <div class="widget-holder widget-full-height widget-flex col-md-6">
                     <div class="widget-bg">
                         <div class="widget-heading">
-                            <h4 class="widget-title"><span class="color-color-scheme fw-600">876</span> <small class="h5 ml-1 my-0 fw-500">New Users</small></h4>
-                            <div class="widget-graph-info"><i class="feather feather-chevron-up arrow-icon color-success"></i>  <span class="color-success ml-2">+34%</span>  <span class="text-muted ml-1">more than last week</span>
+                            <h4 class="widget-title"><span class="color-color-scheme fw-600">876</span> <small class="h5 ml-1 my-0 fw-500">Pengguna baru</small></h4>
+                            <div class="widget-graph-info"><i class="feather feather-chevron-up arrow-icon color-success"></i>  <span class="color-success ml-2">+34%</span>  <span class="text-muted ml-1">lebih dari minggu lalu</span>
                             </div>
                             <!-- /.widget-graph-info -->
                         </div>
@@ -118,14 +126,14 @@
                 <!-- /.widget-holder -->
                 <div class="widget-holder widget-sm widget-border-radius col-md-3">
                     <div class="widget-bg">
-                        <div class="widget-heading bg-purple"><span class="widget-title my-0 color-white fs-12 fw-600">Total Revenue</span>  <i class="widget-heading-icon feather feather-box"></i>
+                        <div class="widget-heading bg-purple"><span class="widget-title my-0 color-white fs-12 fw-600">Total pendapatan</span>  <i class="widget-heading-icon feather feather-box"></i>
                         </div>
                         <!-- /.widget-heading -->
                         <div class="widget-body">
                             <div class="counter-w-info">
                                 <div class="counter-title color-color-scheme"><span class="counter">2.5</span>Crores</div>
                                 <!-- /.counter-title -->
-                                <div class="counter-info"><span class="badge bg-success-contrast"><i class="feather feather-arrow-up"></i> 23% increase </span>in conversion</div>
+                                <div class="counter-info"><span class="badge bg-success-contrast"><i class="feather feather-arrow-up"></i> 23% Meningkat</span>dalam konversi</div>
                                 <!-- /.counter-info -->
                             </div>
                             <!-- /.counter-w-info -->
@@ -137,7 +145,7 @@
                 <!-- /.widget-holder -->
                 <div class="widget-holder widget-sm widget-border-radius col-md-3">
                     <div class="widget-bg">
-                        <div class="widget-heading bg-purple"><span class="widget-title my-0 color-white fs-12 fw-600">Total Orders</span>  <i class="widget-heading-icon feather feather-briefcase"></i>
+                        <div class="widget-heading bg-purple"><span class="widget-title my-0 color-white fs-12 fw-600">Total pesanan</span>  <i class="widget-heading-icon feather feather-briefcase"></i>
                         </div>
                         <!-- /.widget-heading -->
                         <div class="widget-body">
@@ -145,7 +153,7 @@
                                 <div class="counter-title color-purple">&dollar;<span class="counter">846</span>
                                 </div>
                                 <!-- /.counter-title -->
-                                <div class="counter-info"><span class="badge bg-danger-contrast"><i class="feather feather-arrow-down"></i> 6% decrease </span> in Orders</div>
+                                <div class="counter-info"><span class="badge bg-danger-contrast"><i class="feather feather-arrow-down"></i> 6% mengurangi </span> di Pesanan</div>
                                 <!-- /.counter-info -->
                             </div>
                             <!-- /.counter-w-info -->
@@ -157,7 +165,7 @@
                 <!-- /.widget-holder -->
                 <div class="widget-holder widget-sm widget-border-radius col-md-3">
                     <div class="widget-bg">
-                        <div class="widget-heading"><span class="widget-title my-0 fs-12 fw-600">Total Merchants</span>  <i class="widget-heading-icon feather feather-anchor"></i>
+                        <div class="widget-heading"><span class="widget-title my-0 fs-12 fw-600">Total Pedagang</span>  <i class="widget-heading-icon feather feather-anchor"></i>
                         </div>
                         <!-- /.widget-heading -->
                         <div class="widget-body">
@@ -169,7 +177,7 @@
                                     <!-- /.d-flex -->
                                 </div>
                                 <!-- /.counter-title -->
-                                <div class="counter-info"><span class="badge bg-success-contrast"><i class="feather feather-arrow-up"></i> 5% increase</span>
+                                <div class="counter-info"><span class="badge bg-success-contrast"><i class="feather feather-arrow-up"></i> 5% meningkat</span>
                                 </div>
                                 <!-- /.counter-info -->
                             </div>
@@ -182,7 +190,7 @@
                 <!-- /.widget-holder -->
                 <div class="widget-holder widget-sm widget-border-radius col-md-3">
                     <div class="widget-bg">
-                        <div class="widget-heading"><span class="widget-title my-0 fs-12 fw-600">Complaints</span>  <i class="widget-heading-icon feather feather-zap"></i>
+                        <div class="widget-heading"><span class="widget-title my-0 fs-12 fw-600">Keluhan</span>  <i class="widget-heading-icon feather feather-zap"></i>
                         </div>
                         <!-- /.widget-heading -->
                         <div class="widget-body">
@@ -193,7 +201,7 @@
                                     <!-- /.d-flex -->
                                 </div>
                                 <!-- /.counter-title -->
-                                <div class="counter-info"><span class="badge bg-success-contrast"><i class="feather feather-arrow-up"></i> 5% increase </span>in advertising</div>
+                                <div class="counter-info"><span class="badge bg-success-contrast"><i class="feather feather-arrow-up"></i> 5% meningkat </span>dalam periklanan</div>
                                 <!-- /.counter-info -->
                             </div>
                             <!-- /.counter-w-info -->

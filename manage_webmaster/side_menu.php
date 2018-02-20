@@ -15,6 +15,7 @@
             <!-- Sidebar Menu -->
             <nav class="sidebar-nav">
                 <ul class="nav in side-menu">
+
                     <li class="current-page"><a href="dashboard.php"><i class="list-icon feather feather-command"></i> <span class="hide-menu">Dashboard</span></a></li>
                     <li><a href=""><i class="list-icon feather feather-command"></i> <span class="hide-menu">Admin Logins</span></a></li>
                     <li><a href="add_districts.php"><i class="list-icon feather feather-command"></i> <span class="hide-menu">Districts</span></a></li>
@@ -22,6 +23,13 @@
                     <li><a href="user.php"><i class="list-icon feather feather-command"></i> <span class="hide-menu">Users</span></a></li>
                     <li><a href=""><i class="list-icon feather feather-command"></i> <span class="hide-menu">Merchant</span></a></li>
                     <li><a href=""><i class="list-icon feather feather-command"></i> <span class="hide-menu">Orders</span></a></li>
+
+                    <li class="current-page"><a href="#"><i class="list-icon feather feather-command"></i> <span class="hide-menu">papan instrumen</span></a></li>
+                    <li><a href=""><i class="list-icon feather feather-command"></i> <span class="hide-menu">Admin Masuk</span></a></li>
+                    <li><a href=""><i class="list-icon feather feather-command"></i> <span class="hide-menu">Pengguna</span></a></li>
+                    <li><a href=""><i class="list-icon feather feather-command"></i> <span class="hide-menu">Pedagang</span></a></li>
+                    <li><a href=""><i class="list-icon feather feather-command"></i> <span class="hide-menu">Pesanan</span></a></li>
+
                     
                     
                 </ul>
