@@ -113,9 +113,16 @@
                                     <div class="form-group row">
                                         <label class="col-md-3 col-form-label" for="l0">Password Admin</label>
                                         <div class="col-md-9">
-                                            <input type="email" class="form-control"  placeholder="Masukkan Password Admin"   name="admin_password" required>
+                                            <input type="password" class="form-control"  placeholder="Masukkan Password Admin"   name="admin_password" required>
                                         </div>
                                     </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-3 col-form-label" for="l0">konfirmasi sandi</label>
+                                        <div class="col-md-9">
+                                            <input type="password" class="form-control"  placeholder="Masukkan Password Admin"   name="confirm_password" required onChange="checkPasswordMatch();">
+                                        </div>
+                                    </div>
+                                    <div id="divCheckPasswordMatch" style="color:red"></div>
                                     <?php $getStatus = getAllData('lkp_status');?>
                                     <div class="form-group row">
                                         <label class="col-md-3 col-form-label" for="l0">Status</label>
@@ -171,4 +178,18 @@
     <!-- This Script For number and price validations -->
     <script type="text/javascript" src="assets/js/check_number_validations.js"></script>
 </body>
+<script type="text/javascript">
+            function checkPasswordMatch() {
+                var password = $("#admin_password").val();
+                var confirmPassword = $("#confirm_password").val();
+                if (confirmPassword != password) {
+                    $("#divCheckPasswordMatch").html("Passwords do not match!");
+                    $("#admin_password").val("");
+                    $("#confirm_password").val("");
+                } else {
+                    $("#divCheckPasswordMatch").html("");
+                }
+            }
+            
+        </script>
 </html>
