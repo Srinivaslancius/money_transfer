@@ -18,8 +18,7 @@
     <div id="wrapper" class="wrapper">
         <!-- HEADER & TOP NAVIGATION -->
         <nav class="navbar">
-            <!-- Logo Area -->
-            <?php include_once './meta.php';?>
+            <!-- Logo Area -->         
             <?php include_once './topbar.php';?>
     <!-- /.navbar-right -->
     <!-- Right Menu -->

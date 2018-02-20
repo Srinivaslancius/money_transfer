@@ -20,7 +20,8 @@
         <!-- HEADER & TOP NAVIGATION -->
         <nav class="navbar">
             <!-- Logo Area -->
-            <?php include_once './topbar.php';?>            
+            <?php include_once './topbar.php';?>
+           
     <!-- /.navbar-right -->
     <!-- Right Menu -->
     
@@ -39,16 +40,12 @@
             <!-- Page Title Area -->
             <div class="row page-title clearfix">
                 <div class="page-title-left">
-                    <h6 class="page-title-heading mr-0 mr-r-5">Lihat Distrik</h6>
+                    <h6 class="page-title-heading mr-0 mr-r-5">Lihat Transaksi Pedagang</h6>
                     
                 </div>
                 <!-- /.page-title-left -->
 
-                <div class="page-title-right d-none d-sm-inline-flex">
-                    
-                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="add_districts.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple">Tambahkan Distrik</a>
-                    </div>
-                </div>
+                
                 <!-- /.page-title-right -->
             </div>
             <!-- /.page-title -->
@@ -62,7 +59,7 @@
                     <div class="col-md-12 widget-holder">
                         <div class="widget-bg">
                             <div class="widget-heading clearfix">
-                                <h5>Lihat Distrik</h5>
+                                <h5>View Districts</h5>
                             </div>
                             <!-- /.widget-heading -->
                             <div class="widget-body clearfix">
@@ -70,9 +67,9 @@
                                     <thead>
                                         <tr>
                                             <th data-identifier>ID</th>
-                                            <th data-editable>Nama kabupaten</th>
-                                            <th data-editable>Status</th>
-                                            <th>Tindakan</th>
+                                            <th data-editable>Merchant Id</th>
+                                            <th data-editable>User Id</th>
+                                            <th>Credit Amount</th>
                                             <!-- <th data-editable>Last Name</th>
                                             <th data-editable>Job Title</th>
                                             <th>Started On</th>
@@ -80,13 +77,13 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php $getDisricts = getAllDataWithActiveRecent('lkp_districts'); $i=1; ?>
+                                        <?php $getDisricts = getAllDataWithActiveRecent('merchant_transactions'); $i=1; ?>
                                         <?php while ($row = $getDisricts->fetch_assoc()) { ?>
                                         <tr data-expanded="true">
                                             <td><?php echo $i; ?></td>
-                                            <td><?php echo $row['district_name']; ?></td>
-                                            <td><?php if ($row['lkp_status_id']==0) { echo "<button class='button1'>Active</button>";} else { echo "<button class='button2'>InActive</button>"; }  ?></td>
-                                            <td><a href="edit_districts.php?bid=<?php echo $row['id']; ?>"><i class="fa fa-edit"></i></a></td>
+                                            <td><?php echo $row['merchant_id']; ?></td>
+                                            <td><?php echo $row['user_id']; ?></td>
+                                            <td><?php echo $row['credit_amount']; ?></td>
                                         </tr>
                                         <?php $i++; } ?>
                                     </tbody>

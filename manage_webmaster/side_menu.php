@@ -22,7 +22,8 @@
                      <li><a href="add_religions.php"><i class="list-icon feather feather-command"></i> <span class="hide-menu">Agama</span></a></li>
                     <li><a href="user.php"><i class="list-icon feather feather-command"></i> <span class="hide-menu">Pengguna</span></a></li>                    
                     <li><a href="add_merchants.php"><i class="list-icon feather feather-command"></i> <span class="hide-menu">Pedagang</span></a></li>
-                    <li><a href="transactions.php"><i class="list-icon feather feather-command"></i> <span class="hide-menu">Transaksi</span></a></li>
+                    <li><a href="view_merchant_transactions.php"><i class="list-icon feather feather-command"></i> <span class="hide-menu">MerchantTransactions</span></a></li>
+                    <li><a href="view_user_transactions.php"><i class="list-icon feather feather-command"></i> <span class="hide-menu">Transaksi Pengguna</span></a></li>
                     
                 </ul>
                 <!-- /.side-menu -->
