@@ -18,11 +18,14 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		    	$login_count = $getLoggedInDetails['login_count']+1;
 		    	$sql = "UPDATE `users` SET login_count='$login_count', last_login_visit='$last_login_visit' WHERE user_email = '$user_email' ";
 		    	$row = $conn->query($sql);		 
-		    	$response["userId"] = $getLoggedInDetails['id'];
+		    	$response["id"] = $getLoggedInDetails['id'];
+		    	$response["userId"] = $getLoggedInDetails['user_id'];
 		    	$response["userName"] = $getLoggedInDetails['user_full_name'];
 		    	$response["userEmail"] = $getLoggedInDetails['user_email'];
 		    	$response["userMobile"] = $getLoggedInDetails['user_mobile'];
 		    	$response["amount"] = $getLoggedInDetails['amount'];
+		    	$response["authKey"] = $getLoggedInDetails['auth_key'];
+		    	$response["qrCodeImage"] = $base_url."manage_webmaster/temp/".$getLoggedInDetails["qr_img_code"];
 		    	$response["success"] = 0;
 				$response["message"] = "Success!.";
 			} else {

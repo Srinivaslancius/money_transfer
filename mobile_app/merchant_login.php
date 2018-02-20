@@ -7,22 +7,23 @@ $lists = array();
 $response = array();
 if($_SERVER['REQUEST_METHOD']=='POST'){
 
-	if (isset($_REQUEST['userEmail']) && !empty($_REQUEST['userPassword'])  ) {
+	if (isset($_REQUEST['merchantEmail']) && !empty($_REQUEST['merchantPassword'])  ) {
 
-		 	$user_email = $_REQUEST['userEmail'];
-		    $user_password = encryptPassword($_REQUEST['userPassword']);
-		    $getLoginData = userLogin($user_email,$user_password);
+		 	$merchant_email = $_REQUEST['merchantEmail'];
+		    $merchant_password = encryptPassword($_REQUEST['merchantPassword']);
+		    $getLoginData = merchantLogin($merchant_email,$merchant_password);
 		    //Set variable for session
 		    if($getLoggedInDetails = $getLoginData->fetch_assoc()) {
 		    	$last_login_visit = date("Y-m-d h:i:s");
 		    	$login_count = $getLoggedInDetails['login_count']+1;
-		    	$sql = "UPDATE `users` SET login_count='$login_count', last_login_visit='$last_login_visit' WHERE user_email = '$user_email' ";
-		    	$row = $conn->query($sql);		 
-		    	$response["userId"] = $getLoggedInDetails['id'];
-		    	$response["userName"] = $getLoggedInDetails['user_full_name'];
-		    	$response["userEmail"] = $getLoggedInDetails['user_email'];
-		    	$response["userMobile"] = $getLoggedInDetails['user_mobile'];
-		    	$response["amount"] = $getLoggedInDetails['amount'];
+		    	$sql = "UPDATE `merchants` SET login_count='$login_count', last_login_visit='$last_login_visit' WHERE user_email = '$user_email' ";
+		    	$row = $conn->query($sql);	
+		    	$response["id"] = $getLoggedInDetails['id'];	 
+		    	$response["merchantId"] = $getLoggedInDetails['merchant_id'];
+		    	$response["merchantName"] = $getLoggedInDetails['merchant_full_name'];
+		    	$response["merchantEmail"] = $getLoggedInDetails['merchant_email'];
+		    	$response["merchantMobile"] = $getLoggedInDetails['merchant_mobile'];
+				$response["authKey"] = $getLoggedInDetails['auth_key'];		    			    	
 		    	$response["success"] = 0;
 				$response["message"] = "Success!.";
 			} else {

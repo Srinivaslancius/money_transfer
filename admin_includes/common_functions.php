@@ -34,6 +34,13 @@
         return $result;
     }
 
+    function merchantLogin($merchant_email,$merchant_password) {
+        global $conn;
+        $sql="SELECT * FROM merchants WHERE merchant_email = '$merchant_email' AND merchant_password = '$merchant_password' AND lkp_status_id = 0";
+        $result = $conn->query($sql);        
+        return $result;
+    }
+
     function forgotPassword($email) {
         global $conn;
         $sql="SELECT * from users WHERE user_email = '$email' ";

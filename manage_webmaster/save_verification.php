@@ -87,7 +87,7 @@ if(!isset($_SESSION['admin_user_id'])) {
     $created_at = date("Y-m-d h:i:s");
     //Generatre random id   
     $randomDate = date("Ymd h:i:s");
-    $user_id = "QRSCAN_".$randomDate.uniqid();
+    $user_id = "MONEY_TRANSFER".$randomDate.uniqid();
 
     $dob=$_REQUEST['dob'];
     //User Image saving 
