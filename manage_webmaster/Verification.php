@@ -66,7 +66,7 @@
                                 <p class="text-muted"></p>
                                 <form method="post" action="save_verification.php" enctype="multipart/form-data">
 
-                                    <input class="form-control" id="l0" placeholder="Enter Your Name" type="hidden"  name="name" value="<?php echo $_POST['name']; ?>">
+                                    <input class="form-control" id="l0" placeholder="Enter Your Name" type="hidden"  name="user_full_name" value="<?php echo $_POST['user_full_name']; ?>">
 
                                     <input class="form-control" id="l0" placeholder="Enter Your Name" type="hidden"  name="user_mobile" value="<?php echo $_POST['user_mobile']; ?>">
                                     <input class="form-control" id="l0" placeholder="Enter Your Name" type="hidden"  name="user_email" value="<?php echo $_POST['user_email']; ?>">
@@ -77,8 +77,8 @@
                                     <input class="form-control" id="l0" placeholder="Enter Your Name" type="hidden"  name="address" value="<?php echo $_POST['address']; ?>">
                                     <input class="form-control" id="l0" placeholder="Enter RT / RW" type="hidden" name="rt/rw" value="<?php echo $_POST['rt/rw']; ?>">
                                     <input class="form-control" id="l0" placeholder="Enter EX / Village" type="hidden" name="ex/village" value="<?php echo $_POST['ex/village']; ?>">
-                                    <input class="form-control" id="l0" placeholder="Enter district" type="hidden" name="district" value="<?php echo $_POST['district']; ?>">
-                                    <input class="form-control" id="l0" placeholder="Enter religion" type="hidden" name="religion" value="<?php echo $_POST['religion']; ?>">
+                                    <input class="form-control" id="l0" placeholder="Enter district" type="hidden" name="lkp_district_id" value="<?php echo $_POST['lkp_district_id']; ?>">
+                                    <input class="form-control" id="l0" placeholder="Enter religion" type="hidden" name="lkp_religion" value="<?php echo $_POST['lkp_religion']; ?>">
                                     <input class="form-control" id="l0" placeholder="Enter martial_status" type="hidden" name="martial_status" value="<?php echo $_POST['martial_status']; ?>">
                                     <input class="form-control" id="l0" placeholder="Enter work" type="hidden" name="work" value="<?php echo $_POST['work']; ?>">
                                     <input class="form-control" id="l0" placeholder="Enter citizenship" type="hidden" name="citizenship" value="<?php echo $_POST['citizenship']; ?>">
