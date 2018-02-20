@@ -29,7 +29,7 @@
 
     function userLogin($user_email,$user_pwd) {
         global $conn;
-        $sql="SELECT * FROM users WHERE (user_email = '$user_email' OR user_mobile = '$user_email') AND user_password = '$user_pwd' AND lkp_status_id = 0";
+        $sql="SELECT * FROM users WHERE user_email = '$user_email' AND user_password = '$user_pwd' AND lkp_status_id = 0";
         $result = $conn->query($sql);        
         return $result;
     }
