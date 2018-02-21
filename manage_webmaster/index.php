@@ -34,7 +34,7 @@
                 <i class="zmdi zmdi-close"></i>
               </span>
             </button>
-            <strong>Oh snap!</strong> Entered Username or Password is incorrect!.
+            <strong>Oh jepret!</strong> Memasukkan Username atau Password salah !
           </div>
         </div>
       </div>
