@@ -40,7 +40,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 		    	$response["address"] = $getLoggedInDetails['address'];
 		    	$response["rt/rw"] = $getLoggedInDetails['rt/rw'];
 		    	$response["ex/village"] = $getLoggedInDetails['ex/village'];		    	
-		    	$response["userImage"] = $base_url."uploads/user_images/".$getLoggedInDetails["qr_img_code"];
+		    	$response["userImage"] = $base_url."uploads/user_images/".$getLoggedInDetails["user_image"];
 		    	$response["success"] = 0;
 				$response["message"] = "Keberhasilan!.";
 			} else {
