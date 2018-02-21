@@ -8,10 +8,11 @@
     <link href="cdnjs.cloudflare.com/ajax/libs/jquery-footable/3.1.4/footable.bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="cdnjs.cloudflare.com/ajax/libs/datatables/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/style.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Head Libs -->
     <script src="cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     <script data-pace-options='{ "ajax": false, "selectors": [ "img" ]}' src="cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+    
 </head>
 
 <body class="header-dark sidebar-light sidebar-expand">
@@ -19,7 +20,7 @@
         <!-- HEADER & TOP NAVIGATION -->
         <nav class="navbar">
             <!-- Logo Area -->
-            <?php include_once './topbar.php';?>
+            <?php include_once './topbar.php';?>            
     <!-- /.navbar-right -->
     <!-- Right Menu -->
     
@@ -42,10 +43,11 @@
                     
                 </div>
                 <!-- /.page-title-left -->
+
                 <div class="page-title-right d-none d-sm-inline-flex">
-        
-                    <!-- <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="add_admin.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple">Tambahkan Pengguna Admin</a>
-                    </div> -->
+                    
+                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="add_districts.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple">Tambahkan Pengguna Admin</a>
+                    </div>
                 </div>
                 <!-- /.page-title-right -->
             </div>
@@ -61,7 +63,6 @@
                         <div class="widget-bg">
                             <div class="widget-heading clearfix">
                                 <h5>Lihat Pengguna Admin</h5>
-            
                             </div>
                             <!-- /.widget-heading -->
                             <div class="widget-body clearfix">
@@ -73,12 +74,13 @@
                                             <th data-editable>Email Admin</th>
                                             <th data-editable>Tanggal Dibuat</th>
                                             <th>Status</th>
-                                            <!-- <th>Actions</th> -->
-                                            <!-- <th>Started On</th>
+                                            <th>Tindakan</th>
+                                            <!-- <th data-editable>Last Name</th>
+                                            <th data-editable>Job Title</th>
+                                            <th>Started On</th>
                                             <th>Date of Birth</th> -->
                                         </tr>
                                     </thead>
-                                    
                                     <tbody>
                                         <?php $getAdminUsers = getAllDataWithActiveRecent('admin_users'); $i=1; ?>
                                         <?php while ($row = $getAdminUsers->fetch_assoc()) { ?>
@@ -88,10 +90,10 @@
                                             <td><?php echo $row['admin_email']; ?></td>
                                             <td><?php echo $row['created_at']; ?></td>
                                             <td><?php if ($row['lkp_status_id']==0) { echo "<button class='button1'>Active</button>";} else { echo "<button class='button2'>InActive</button>"; }  ?></td>
+                                            <td><a href="edit_admin_users.php?bid=<?php echo $row['id']; ?>">edit</a></td>
                                         </tr>
-                                        
+                                        <?php $i++; } ?>
                                     </tbody>
-                                    <?php $i++; } ?>
                                 </table>
                             </div>
                             <!-- /.widget-body -->

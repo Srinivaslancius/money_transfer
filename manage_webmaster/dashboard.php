@@ -45,7 +45,7 @@
                 <!-- /.page-title-left -->
                 <div class="page-title-right d-none d-sm-inline-flex">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="dashboard.php">Dashboard</a>
+                        <li class="breadcrumb-item"><a href="dashboard.php">Dasbor</a>
                         </li>
                         <li class="breadcrumb-item active">Default</li>
                     </ol>

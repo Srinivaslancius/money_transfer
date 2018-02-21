@@ -50,13 +50,13 @@
             <!-- Page Title Area -->
             <div class="row page-title clearfix">
                 <div class="page-title-left">
-                    <h6 class="page-title-heading mr-0 mr-r-5">Tambahkan Pengguna Admin</h6>
+                    <h6 class="page-title-heading mr-0 mr-r-5">Edit Distrik</h6>
                     
                 </div>
                 <!-- /.page-title-left -->
                 <div class="page-title-right d-none d-sm-inline-flex">
                     
-                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="view_admin_users.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple">Lihat Pengguna Admin</a>
+                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="view_districts.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple">Lihat Distrik</a>
                     </div>
                 </div>
                 <!-- /.page-title-right -->
@@ -65,23 +65,20 @@
             <!-- =================================== -->
             <!-- Different data widgets ============ -->
             <!-- =================================== -->
+            <?php $id = $_GET['bid']; ?>
+           
             <?php
         if (!isset($_POST['submit']))  {
-        
+          
         } else  { 
 
-            //echo "<pre>"; print_r($_POST); die;
             $admin_name = $_REQUEST['admin_name'];
             $admin_email = $_REQUEST['admin_email'];
             $admin_password = encryptPassword($_REQUEST['admin_password']);
             $lkp_status_id = $_REQUEST['lkp_status_id'];
-            $created_at = date("Y-m-d h:i:s");
-            
-            $sql = "INSERT INTO admin_users (`admin_name`, `admin_email`,`admin_password`,`lkp_status_id`,`created_at`) VALUES ('$admin_name','$admin_email','$admin_password','$lkp_status_id','$created_at')";
-            
-            
-            $result = $conn->query($sql);
-           
+
+            $sql = "UPDATE `admin_users` SET admin_name = '$admin_name',admin_email = '$admin_email',lkp_status_id = '$lkp_status_id' WHERE id = '$id' ";
+            $result = $conn->query($sql);           
             if( $result == 1){
                 echo "<script type='text/javascript'>window.location='view_admin_users.php?msg=success'</script>";
             } else {
@@ -89,37 +86,40 @@
             }
         }
         ?>
+        <?php $getAdminUsers = getIndividualDetails('admin_users','id',$id);
+        
+         ?>
             <div class="widget-list">
                 <div class="row widget-bg">
                     <div class="col-md-3"></div>
                     <div class="col-md-6 widget-holder">
                         <div>
                             <div class="widget-body clearfix">
-                                <h5 class="box-title mr-b-0">Tambahkan Pengguna Admin</h5>
+                                <h5 class="box-title mr-b-0">Edit Distrik</h5>
                                 <p class="text-muted"></p>
                                 <form method="post">
                                     <div class="form-group row">
                                         <label class="col-md-3 col-form-label" for="l0">Nama admin</label>
                                         <div class="col-md-9">
-                                            <input class="form-control" id="l0" placeholder="Masukkan Nama Admin" type="text" required name="admin_name">
+                                            <input class="form-control" id="l0" type="text" required name="admin_name" value="<?php echo $getAdminUsers['admin_name']; ?>">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-md-3 col-form-label" for="l0">Email Admin</label>
                                         <div class="col-md-9">
-                                            <input type="email" class="form-control"  placeholder="Masukkan Email Admin"   name="admin_email" required>
+                                            <input class="form-control" id="l0" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required name="admin_email" value="<?php echo $getAdminUsers['admin_email']; ?>">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-md-3 col-form-label" for="l0">Password Admin</label>
                                         <div class="col-md-9">
-                                            <input type="password" class="form-control"  placeholder="Masukkan Password Admin" id="admin_password"  name="admin_password" required>
+                                            <input class="form-control"  type="password" required id="admin_password"  name="admin_password" value="<?php echo decryptPassword($getAdminUsers['admin_password']);?>">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-md-3 col-form-label" for="l0">konfirmasi sandi</label>
                                         <div class="col-md-9">
-                                            <input type="password" class="form-control"  placeholder="Masukkan Password Admin"   name="confirm_password" id="confirm_password" required onChange="checkPasswordMatch();">
+                                            <input class="form-control" id="l0" type="password" required name="confirm_password" id="confirm_password" onChange="checkPasswordMatch();">
                                         </div>
                                     </div>
                                     <div id="divCheckPasswordMatch" style="color:red"></div>
@@ -128,16 +128,15 @@
                                         <label class="col-md-3 col-form-label" for="l0">Status</label>
                                         <div class="col-md-9">
                                             <select class="form-control" id="lkp_status_id" name="lkp_status_id" required>
-                                                <option value="">-- Pilih Status --</option>
-                                                <?php while($row = $getStatus->fetch_assoc()) {  ?>
-                                              <option value="<?php echo $row['id']; ?>"><?php echo $row['status']; ?></option>
+                                            <?php while($row = $getStatus->fetch_assoc()) {  ?>
+                                              <option <?php if($row['id'] == $getAdminUsers['lkp_status_id']) { echo "Selected"; } ?> value="<?php echo $row['id']; ?>"><?php echo $row['status']; ?></option>
                                           <?php } ?>
                                             </select>
                                         </div>
                                     </div>
                                     
                                     <div class="form-actions btn-list">
-                                        <center><button class="btn btn-primary" type="submit" name="submit">Menyerahkan</button></center>
+                                        <center><button class="btn btn-primary" type="submit" name="submit">Memperbarui</button></center>
                                         
                                     </div>
                                 </form>
@@ -177,8 +176,7 @@
 
     <!-- This Script For number and price validations -->
     <script type="text/javascript" src="assets/js/check_number_validations.js"></script>
-</body>
-<script type="text/javascript">
+    <script type="text/javascript">
             function checkPasswordMatch() {
                 var password = $("#admin_password").val();
                 var confirmPassword = $("#confirm_password").val();
@@ -192,4 +190,5 @@
             }
             
         </script>
+</body>
 </html>
