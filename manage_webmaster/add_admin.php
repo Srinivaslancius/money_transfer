@@ -107,8 +107,13 @@
                                     <div class="form-group row">
                                         <label class="col-md-3 col-form-label" for="l0">Email Admin</label>
                                         <div class="col-md-9">
-                                            <input type="email" class="form-control"  placeholder="Masukkan Email Admin"   name="admin_email" required>
+                                            <input type="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Masukkan Email Admin"   name="admin_email" id="user_input" onkeyup="checkUserAvailTest()" required>
+                                            <span id="input_status" style="color: red;"></span>
+                                        <div class="help-block with-errors"></div>
+                                        <input type="hidden" id="table_name" value="admin_users">
+                                        <input type="hidden" id="column_name" value="admin_email">
                                         </div>
+
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-md-3 col-form-label" for="l0">Password Admin</label>

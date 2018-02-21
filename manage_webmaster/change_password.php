@@ -50,14 +50,11 @@
             <!-- Page Title Area -->
             <div class="row page-title clearfix">
                 <div class="page-title-left">
-                    <h6 class="page-title-heading mr-0 mr-r-5">Edit Distrik</h6>
+                    <h6 class="page-title-heading mr-0 mr-r-5">Tambahkan Pengguna Admin</h6>
                     
                 </div>
                 <!-- /.page-title-left -->
                 <div class="page-title-right d-none d-sm-inline-flex">
-                    
-                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="view_districts.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple">Lihat Distrik</a>
-                    </div>
                 </div>
                 <!-- /.page-title-right -->
             </div>
@@ -65,82 +62,60 @@
             <!-- =================================== -->
             <!-- Different data widgets ============ -->
             <!-- =================================== -->
-            <?php $id = $_GET['bid']; ?>
-           
-            <?php
-        if (!isset($_POST['submit']))  {
-          
-        } else  { 
+            <?php 
+error_reporting(0);
+if (!isset($_POST['submit']))  {
+} else  { 
+    //echo "<pre>"; print_r($_POST); die;  
+    $id = $_SESSION["admin_user_id"];
+    $sql = "SELECT * FROM admin_users WHERE id = '$id'";
+    $result = $conn->query($sql);
+    $getAdminUserPwd = $result->fetch_assoc();
 
-            $admin_name = $_REQUEST['admin_name'];
-            $admin_email = $_REQUEST['admin_email'];
-            $admin_password = encryptPassword($_REQUEST['admin_password']);
-            $lkp_status_id = $_REQUEST['lkp_status_id'];
-
-            $sql = "UPDATE `admin_users` SET admin_name = '$admin_name',admin_email = '$admin_email',lkp_status_id = '$lkp_status_id' WHERE id = '$id' ";
-            $result = $conn->query($sql);           
-            if( $result == 1){
-                echo "<script type='text/javascript'>window.location='view_admin_users.php?msg=success'</script>";
-            } else {
-                echo "<script type='text/javascript'>window.location='view_admin_users.php?msg=fail'</script>";
-            }
-        }
-        ?>
-        <?php $getAdminUsers = getIndividualDetails('admin_users','id',$id);
+    if($_POST['current_password'] == decryptPassword($getAdminUserPwd['admin_password'])){
         
-         ?>
+        $sql1 = "UPDATE admin_users SET admin_password = '" . encryptPassword($_POST["confirm_password"]) . "' WHERE  id = '$id'";
+        if($conn->query($sql1) === TRUE){                
+            echo "<script>alert('Password Changed Successfully');window.location.href='dashboard.php';</script>";
+        }          
+    } else {  
+        echo "<script>alert('Current Password is not Correct');window.location.href='change_password.php';</script>";
+    }
+}
+?>
             <div class="widget-list">
                 <div class="row widget-bg">
                     <div class="col-md-3"></div>
                     <div class="col-md-6 widget-holder">
                         <div>
                             <div class="widget-body clearfix">
-                                <h5 class="box-title mr-b-0">Edit Distrik</h5>
+                                <h5 class="box-title mr-b-0">Tambahkan Pengguna Admin</h5>
                                 <p class="text-muted"></p>
                                 <form method="post">
+                                
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="l0">Nama admin</label>
+                                        <label class="col-md-3 col-form-label" for="l0">Current Password</label>
                                         <div class="col-md-9">
-                                            <input class="form-control" id="l0" type="text" required name="admin_name" value="<?php echo $getAdminUsers['admin_name']; ?>">
+                                            <input type="password" name="current_password" class="form-control"  placeholder="*********" data-error="Please enter Current Password" required>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="l0">Email Admin</label>
+                                        <label class="col-md-3 col-form-label" for="l0">New Password</label>
                                         <div class="col-md-9">
-                                            <input class="form-control" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required name="admin_email" value="<?php echo $getAdminUsers['admin_email']; ?>" id="user_input" onkeyup="checkUserAvailTest()">
-                                            <span id="input_status" style="color: red;"></span>
-                                            <div class="help-block with-errors"></div>
-                                            <input type="hidden" id="table_name" value="admin_users">
-                                            <input type="hidden" id="column_name" value="admin_email">
+                                            <input type="password"  name="new_password" class="form-control"  id="new_password" minlength="8" placeholder="*********" data-error="Please enter New Password(minimum 8 characters)."  required>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="l0">Password Admin</label>
+                                        <label class="col-md-3 col-form-label" for="l0">Confirm Password</label>
                                         <div class="col-md-9">
-                                            <input class="form-control"  type="password" required id="admin_password"  name="admin_password" value="<?php echo decryptPassword($getAdminUsers['admin_password']);?>">
+                                            <input type="password" class="form-control" minlength="8" placeholder="*********" data-error="Please enter Confirm Password."   name="confirm_password" id="confirm_password" required onChange="checkPasswordMatch();">
                                         </div>
+                                        <div class="help-block with-errors"></div>
+                                        <div id="divCheckPasswordMatch" style="color:red"></div>
                                     </div>
-                                    <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="l0">konfirmasi sandi</label>
-                                        <div class="col-md-9">
-                                            <input class="form-control" id="l0" type="password" required name="confirm_password" id="confirm_password" onChange="checkPasswordMatch();">
-                                        </div>
-                                    </div>
-                                    <div id="divCheckPasswordMatch" style="color:red"></div>
-                                    <?php $getStatus = getAllData('lkp_status');?>
-                                    <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="l0">Status</label>
-                                        <div class="col-md-9">
-                                            <select class="form-control" id="lkp_status_id" name="lkp_status_id" required>
-                                            <?php while($row = $getStatus->fetch_assoc()) {  ?>
-                                              <option <?php if($row['id'] == $getAdminUsers['lkp_status_id']) { echo "Selected"; } ?> value="<?php echo $row['id']; ?>"><?php echo $row['status']; ?></option>
-                                          <?php } ?>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    
+                                    <div id="divCheckPasswordMatch" style="color:red"></div>    
                                     <div class="form-actions btn-list">
-                                        <center><button class="btn btn-primary" type="submit" name="submit">Memperbarui</button></center>
+                                        <center><button class="btn btn-primary" type="submit" name="submit">Menyerahkan</button></center>
                                         
                                     </div>
                                 </form>
@@ -180,19 +155,17 @@
 
     <!-- This Script For number and price validations -->
     <script type="text/javascript" src="assets/js/check_number_validations.js"></script>
-    <script type="text/javascript">
-            function checkPasswordMatch() {
-                var password = $("#admin_password").val();
-                var confirmPassword = $("#confirm_password").val();
-                if (confirmPassword != password) {
-                    $("#divCheckPasswordMatch").html("Passwords do not match!");
-                    $("#admin_password").val("");
-                    $("#confirm_password").val("");
-                } else {
-                    $("#divCheckPasswordMatch").html("");
-                }
-            }
-            
-        </script>
 </body>
+<script>
+function checkPasswordMatch() {
+    var password = $("#new_password").val();
+    var confirmPassword = $("#confirm_password").val();
+    if (confirmPassword != password) {
+        $("#divCheckPasswordMatch").html("Passwords do not match!");
+        $("#confirm_password").val("");
+    } else {
+        $("#divCheckPasswordMatch").html("");
+    }
+}
+</script>
 </html>

@@ -13,7 +13,7 @@
     <script src="cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     <script data-pace-options='{ "ajax": false, "selectors": [ "img" ]}' src="cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
     
-</head>
+
 
 <body class="header-dark sidebar-light sidebar-expand">
     <div id="wrapper" class="wrapper">
@@ -46,7 +46,7 @@
 
                 <div class="page-title-right d-none d-sm-inline-flex">
                     
-                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="add_districts.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple">Tambahkan Pengguna Admin</a>
+                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="add_admin.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple">Tambahkan Pengguna Admin</a>
                     </div>
                 </div>
                 <!-- /.page-title-right -->
@@ -75,10 +75,6 @@
                                             <th data-editable>Tanggal Dibuat</th>
                                             <th>Status</th>
                                             <th>Tindakan</th>
-                                            <!-- <th data-editable>Last Name</th>
-                                            <th data-editable>Job Title</th>
-                                            <th>Started On</th>
-                                            <th>Date of Birth</th> -->
                                         </tr>
                                     </thead>
                                     <tbody>
