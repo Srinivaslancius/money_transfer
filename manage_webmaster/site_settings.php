@@ -50,14 +50,11 @@
             <!-- Page Title Area -->
             <div class="row page-title clearfix">
                 <div class="page-title-left">
-                    <h6 class="page-title-heading mr-0 mr-r-5">Tambahkan Pengguna Admin</h6>
+                    <h6 class="page-title-heading mr-0 mr-r-5">Pengaturan Situs</h6>
                     
                 </div>
                 <!-- /.page-title-left -->
                 <div class="page-title-right d-none d-sm-inline-flex">
-                    
-                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="view_admin_users.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple">Lihat Pengguna Admin</a>
-                    </div>
                 </div>
                 <!-- /.page-title-right -->
             </div>
@@ -67,80 +64,86 @@
             <!-- =================================== -->
             <?php
         if (!isset($_POST['submit']))  {
-        
+          
         } else  { 
 
             //echo "<pre>"; print_r($_POST); die;
-            $admin_name = $_REQUEST['admin_name'];
-            $admin_email = $_REQUEST['admin_email'];
-            $admin_password = encryptPassword($_REQUEST['admin_password']);
-            $lkp_status_id = $_REQUEST['lkp_status_id'];
-            $created_at = date("Y-m-d h:i:s");
-            
-            $sql = "INSERT INTO admin_users (`admin_name`, `admin_email`,`admin_password`,`lkp_status_id`,`created_at`) VALUES ('$admin_name','$admin_email','$admin_password','$lkp_status_id','$created_at')";
-            
+            $id=1;
+            $admin_title = $_POST['admin_title'];  
+            $email = $_POST['email'];
+            $mobile = $_POST['mobile'];   
+            $footer_text = $_POST['footer_text'];
+            $address = $_POST['address'];
+
+            if($_FILES["image"]["name"]!='') {
+                
+                $image = uniqid().$_FILES["image"]["name"];
+                $target_dir = "../uploads/logo/";
+                $target_file = $target_dir . basename($image);
+                move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
+                $sql = "UPDATE `site_settings` SET admin_title = '$admin_title', email='$email', mobile='$mobile', logo = '$image',footer_text='$footer_text', address='$address' WHERE id = '$id' ";
+            } 
             
             $result = $conn->query($sql);
            
             if( $result == 1){
-                echo "<script type='text/javascript'>window.location='view_admin_users.php?msg=success'</script>";
+                echo "<script type='text/javascript'>window.location='site_settings.php?msg=success'</script>";
             } else {
-                echo "<script type='text/javascript'>window.location='view_admin_users.php?msg=fail'</script>";
+                echo "<script type='text/javascript'>window.location='site_settings.php?msg=fail'</script>";
             }
         }
         ?>
+<?php $getSiteSettingsData = getAllDataWhere('site_settings','id','1'); 
+      $getSiteSettings = $getSiteSettingsData->fetch_assoc(); ?>
             <div class="widget-list">
                 <div class="row widget-bg">
                     <div class="col-md-3"></div>
                     <div class="col-md-6 widget-holder">
                         <div>
                             <div class="widget-body clearfix">
-                                <h5 class="box-title mr-b-0">Tambahkan Pengguna Admin</h5>
+                                <h5 class="box-title mr-b-0">Pengaturan Situs</h5>
                                 <p class="text-muted"></p>
-                                <form method="post">
+                                <form method="post" enctype="multipart/form-data">
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="l0">Nama admin</label>
+                                        <label class="col-md-3 col-form-label" for="l0">Judul Admin</label>
                                         <div class="col-md-9">
-                                            <input class="form-control" id="l0" placeholder="Masukkan Nama Admin" type="text" required name="admin_name">
+                                            <input class="form-control" type="text" required name="admin_title" value="<?php echo $getSiteSettings['admin_title'];?>" placeholder="Judul Admin">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="l0">Email Admin</label>
+                                        <label class="col-md-3 col-form-label" for="l0">E-mail</label>
                                         <div class="col-md-9">
-                                            <input type="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Masukkan Email Admin"   name="admin_email" id="user_input" onkeyup="checkUserAvailTest()" required>
-                                            <span id="input_status" style="color: red;"></span>
-                                        <div class="help-block with-errors"></div>
-                                        <input type="hidden" id="table_name" value="admin_users">
-                                        <input type="hidden" id="column_name" value="admin_email">
+                                            <input type="email" name="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Alamat email"  required value="<?php echo $getSiteSettings['email'];?>">
+                                            
                                         </div>
 
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="l0">Password Admin</label>
+                                        <label class="col-md-3 col-form-label" for="l0">Mobile</label>
                                         <div class="col-md-9">
-                                            <input type="password" class="form-control"  placeholder="Masukkan Password Admin" id="admin_password"  name="admin_password" required>
+                                            <input class="form-control valid_mobile_num" name="mobile" maxlength="10" placeholder="Mobile" type="text" required value="<?php echo $getSiteSettings['mobile'];?>" pattern="[0-9]{10}">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="l0">konfirmasi sandi</label>
-                                        <div class="col-md-9">
-                                            <input type="password" class="form-control"  placeholder="konfirmasi sandi"   name="confirm_password" id="confirm_password" required onChange="checkPasswordMatch();">
+                                        <label class="col-md-3 col-form-label" for="l0">Logo</label>
+                                        <img src="<?php echo $base_url . 'uploads/logo/'.$getSiteSettings['logo'] ?>" accept="image/*" height="100" width="100" id="output"/>
+                                        <div class="col-md-7">
+                                            <input id="form-control-22" class="file-upload-input" type="file" accept="image/*" name="image" id="image"  onchange="loadFile(event)"  multiple="multiple" required >
+                                            </label> 
                                         </div>
                                     </div>
-                                    <div id="divCheckPasswordMatch" style="color:red"></div>
-                                    <?php $getStatus = getAllData('lkp_status');?>
                                     <div class="form-group row">
-                                        <label class="col-md-3 col-form-label" for="l0">Status</label>
+                                        <label class="col-md-3 col-form-label" for="l0">Alamat</label>
                                         <div class="col-md-9">
-                                            <select class="form-control" id="lkp_status_id" name="lkp_status_id" required>
-                                                <option value="">-- Pilih Status --</option>
-                                                <?php while($row = $getStatus->fetch_assoc()) {  ?>
-                                              <option value="<?php echo $row['id']; ?>"><?php echo $row['status']; ?></option>
-                                          <?php } ?>
-                                            </select>
+                                            <textarea class="form-control"  rows="3" name="address" required><?php echo $getSiteSettings['address'];?></textarea>
                                         </div>
                                     </div>
-                                    
+                                    <div class="form-group row">
+                                        <label class="col-md-3 col-form-label" for="l0">Catatan kaki</label>
+                                        <div class="col-md-9">
+                                            <textarea class="form-control" rows="3" name=" footer_text" required><?php echo $getSiteSettings['footer_text'];?></textarea>
+                                        </div>
+                                    </div>
                                     <div class="form-actions btn-list">
                                         <center><button class="btn btn-primary" type="submit" name="submit">Menyerahkan</button></center>
                                         
@@ -183,18 +186,4 @@
     <!-- This Script For number and price validations -->
     <script type="text/javascript" src="assets/js/check_number_validations.js"></script>
 </body>
-<script type="text/javascript">
-            function checkPasswordMatch() {
-                var password = $("#admin_password").val();
-                var confirmPassword = $("#confirm_password").val();
-                if (confirmPassword != password) {
-                    $("#divCheckPasswordMatch").html("Sandi tidak cocok!");
-                    $("#admin_password").val("");
-                    $("#confirm_password").val("");
-                } else {
-                    $("#divCheckPasswordMatch").html("");
-                }
-            }
-            
-        </script>
 </html>

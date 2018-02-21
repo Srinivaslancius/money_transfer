@@ -38,11 +38,11 @@
                                     </a>
                             </header>
                             <ul class="list-unstyled card-body">
-                                <li><a href="#"><span><span class="align-middle">Manage Accounts</span></span></a>
+                                <li><a href="#"><span><span class="align-middle">Mengelola akun</span></span></a>
                                 </li>
-                                <li><a href="change_password.php"><span><span class="align-middle">Change Password</span></span></a>
+                                <li><a href="change_password.php"><span><span class="align-middle">Ganti kata sandi</span></span></a>
                                 </li>                                
-                                <li><a href="logout.php"><span><span class="align-middle">Sign Out</span></span></a>
+                                <li><a href="logout.php"><span><span class="align-middle">Keluar</span></span></a>
                                 </li>
                             </ul>
                         </div>

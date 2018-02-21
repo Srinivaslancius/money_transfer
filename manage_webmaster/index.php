@@ -50,7 +50,7 @@
                 <i class="zmdi zmdi-close"></i>
               </span>
             </button>
-            <strong>Oh snap!</strong> Invalid Request!.
+            <strong>Oh jepret!</strong> Permintaan tidak valid !.
           </div>
         </div>
       </div>

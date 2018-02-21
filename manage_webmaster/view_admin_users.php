@@ -86,7 +86,7 @@
                                             <td><?php echo $row['admin_email']; ?></td>
                                             <td><?php echo $row['created_at']; ?></td>
                                             <td><?php if ($row['lkp_status_id']==0) { echo "<button class='button1'>Active</button>";} else { echo "<button class='button2'>InActive</button>"; }  ?></td>
-                                            <td><a href="edit_admin_users.php?bid=<?php echo $row['id']; ?>">edit</a></td>
+                                            <td><a href="edit_admin_users.php?bid=<?php echo $row['id']; ?>"><i class="fa fa-edit"></i></a></td>
                                         </tr>
                                         <?php $i++; } ?>
                                     </tbody>

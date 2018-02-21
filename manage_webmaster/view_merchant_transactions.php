@@ -59,7 +59,7 @@
                     <div class="col-md-12 widget-holder">
                         <div class="widget-bg">
                             <div class="widget-heading clearfix">
-                                <h5>View Districts</h5>
+                                <h5>Lihat Transaksi Pedagang</h5>
                             </div>
                             <!-- /.widget-heading -->
                             <div class="widget-body clearfix">
@@ -67,9 +67,9 @@
                                     <thead>
                                         <tr>
                                             <th data-identifier>ID</th>
-                                            <th data-editable>Merchant Id</th>
-                                            <th data-editable>User Id</th>
-                                            <th>Credit Amount</th>
+                                            <th data-editable>Id Pedagang</th>
+                                            <th data-editable>Identitas pengguna</th>
+                                            <th>Jumlah kredit</th>
                                             <!-- <th data-editable>Last Name</th>
                                             <th data-editable>Job Title</th>
                                             <th>Started On</th>

@@ -54,7 +54,7 @@
           },
           success: function (response) {
             if (response > 0){
-              $('#input_status').html("<span>Already Exist</span>");
+              $('#input_status').html("<span>Sudah ada</span>");
               $("#user_input").val("");
             } else {
               $('#input_status').html("");        

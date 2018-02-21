@@ -50,13 +50,13 @@
             <!-- Page Title Area -->
             <div class="row page-title clearfix">
                 <div class="page-title-left">
-                    <h6 class="page-title-heading mr-0 mr-r-5">Edit Distrik</h6>
+                    <h6 class="page-title-heading mr-0 mr-r-5">Edit pengguna Admin</h6>
                     
                 </div>
                 <!-- /.page-title-left -->
                 <div class="page-title-right d-none d-sm-inline-flex">
                     
-                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="view_districts.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple">Lihat Distrik</a>
+                    <div class="d-none d-md-inline-flex justify-center align-items-center"><a href="view_admin_users.php" class="btn btn-color-scheme btn-sm fs-11 fw-400 mr-l-40 pd-lr-10 mr-l-0-rtl mr-r-40-rtl hidden-xs hidden-sm ripple">Lihat Pengguna Admin</a>
                     </div>
                 </div>
                 <!-- /.page-title-right -->
@@ -95,7 +95,7 @@
                     <div class="col-md-6 widget-holder">
                         <div>
                             <div class="widget-body clearfix">
-                                <h5 class="box-title mr-b-0">Edit Distrik</h5>
+                                <h5 class="box-title mr-b-0">Edit pengguna Admin</h5>
                                 <p class="text-muted"></p>
                                 <form method="post">
                                     <div class="form-group row">
@@ -185,7 +185,7 @@
                 var password = $("#admin_password").val();
                 var confirmPassword = $("#confirm_password").val();
                 if (confirmPassword != password) {
-                    $("#divCheckPasswordMatch").html("Passwords do not match!");
+                    $("#divCheckPasswordMatch").html("Sandi tidak cocok!");
                     $("#admin_password").val("");
                     $("#confirm_password").val("");
                 } else {
